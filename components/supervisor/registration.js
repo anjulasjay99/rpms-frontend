@@ -9,6 +9,7 @@ const Registration = () => {
     const [password, setpassword] = useState("");
     const [staffId,setstaffId ] = useState("");
     const [field, setfield] = useState("Machine Learning");
+    const [role, setrole] = useState("staff");
 
     function Register(e){
         e.preventDefault();
@@ -20,6 +21,7 @@ const Registration = () => {
       password,
       staffId,
       field,
+      role
     };
     axios
       .post("http://localhost:8070/staff/save", newUser)
@@ -41,9 +43,7 @@ const Registration = () => {
 
   return (
    <div>
-   <br/>
-   <div className="col-md-6"> 
-   </div>   
+   <br/>  
    <h1 className="text-center font-weight-bold text-primary">Staff Registration</h1>
    <div className="container">
    <div className='mt-5'>
