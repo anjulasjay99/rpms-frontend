@@ -25101,6 +25101,8 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _evaluatedocument = require("./components/supervisor/evaluatedocument");
+var _evaluatedocumentDefault = parcelHelpers.interopDefault(_evaluatedocument);
 var _registration = require("./components/supervisor/registration");
 var _registrationDefault = parcelHelpers.interopDefault(_registration);
 var _registration1 = require("./components/Views/Student/Registration");
@@ -26998,6 +27000,7 @@ const Registration = ()=>{
     const [password, setpassword] = _react.useState("");
     const [staffId, setstaffId] = _react.useState("");
     const [field, setfield] = _react.useState("Machine Learning");
+    const [role, setrole] = _react.useState("staff");
     function Register(e) {
         e.preventDefault();
         const newUser = {
@@ -27007,7 +27010,8 @@ const Registration = ()=>{
             telNo,
             password,
             staffId,
-            field
+            field,
+            role
         };
         _axiosDefault.default.post("http://localhost:8070/staff/save", newUser).then((res)=>{
             console.log(res.data);
@@ -27027,14 +27031,7 @@ const Registration = ()=>{
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
                 fileName: "components/supervisor/registration.js",
-                lineNumber: 44,
-                columnNumber: 4
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "col-md-6"
-            }, void 0, false, {
-                fileName: "components/supervisor/registration.js",
-                lineNumber: 45,
+                lineNumber: 46,
                 columnNumber: 4
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
@@ -27341,11 +27338,11 @@ const Registration = ()=>{
         ]
     }, void 0, true, {
         fileName: "components/supervisor/registration.js",
-        lineNumber: 43,
+        lineNumber: 45,
         columnNumber: 4
     }, undefined);
 };
-_s(Registration, "eDGgu337VENLKkWVTBPka4i2ZWA=");
+_s(Registration, "3larFI8jLAaV8mFoaNszbGPV7Yw=");
 _c = Registration;
 exports.default = Registration;
 var _c;
