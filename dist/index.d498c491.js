@@ -25166,7 +25166,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./components/supervisor/evaluatedocument":"cvCU3","./components/supervisor/registration":"few2M","./components/supervisor/topicacception":"d9EP9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fdOAw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./components/supervisor/registration":"few2M","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/supervisor/evaluatedocument":"cvCU3","./components/supervisor/topicacception":"d9EP9"}],"fdOAw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -26988,375 +26988,7 @@ function _renderMatches(matches, parentMatches) {
     return _renderMatches(matches);
 }
 
-},{"history":"iE5Zp","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cvCU3":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0c5c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0c5c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Evaluatedocument = ()=>{
-    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 5,
-                columnNumber: 10
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                className: "text-center font-weight-bold text-primary",
-                children: "Evaluate Documents"
-            }, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 6,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 7,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 7,
-                columnNumber: 10
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 7,
-                columnNumber: 15
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "container",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("table", {
-                    class: "table table-bordered",
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("thead", {
-                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
-                                children: [
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "#"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 12,
-                                        columnNumber: 9
-                                    }, undefined),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "Group Id"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 13,
-                                        columnNumber: 9
-                                    }, undefined),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "Student Submission"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 14,
-                                        columnNumber: 9
-                                    }, undefined),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "Status"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 15,
-                                        columnNumber: 9
-                                    }, undefined),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "Marks"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 16,
-                                        columnNumber: 9
-                                    }, undefined),
-                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                        scope: "col",
-                                        children: "Action"
-                                    }, void 0, false, {
-                                        fileName: "components/supervisor/evaluatedocument.js",
-                                        lineNumber: 17,
-                                        columnNumber: 9
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/supervisor/evaluatedocument.js",
-                                lineNumber: 11,
-                                columnNumber: 7
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/supervisor/evaluatedocument.js",
-                            lineNumber: 10,
-                            columnNumber: 5
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            scope: "row",
-                                            children: "1"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 22,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "Mark"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 23,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "Otto"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 24,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@mdo"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 25,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@mdo"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 26,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@mdo"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 27,
-                                            columnNumber: 9
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "components/supervisor/evaluatedocument.js",
-                                    lineNumber: 21,
-                                    columnNumber: 7
-                                }, undefined),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            scope: "row",
-                                            children: "2"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 30,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "Jacob"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 31,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "Thornton"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 32,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@fat"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 33,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@mdo"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 34,
-                                            columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                            children: "@mdo"
-                                        }, void 0, false, {
-                                            fileName: "components/supervisor/evaluatedocument.js",
-                                            lineNumber: 35,
-                                            columnNumber: 9
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "components/supervisor/evaluatedocument.js",
-                                    lineNumber: 29,
-                                    columnNumber: 7
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/supervisor/evaluatedocument.js",
-                            lineNumber: 20,
-                            columnNumber: 5
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/supervisor/evaluatedocument.js",
-                    lineNumber: 9,
-                    columnNumber: 5
-                }, undefined)
-            }, void 0, false, {
-                fileName: "components/supervisor/evaluatedocument.js",
-                lineNumber: 8,
-                columnNumber: 5
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "components/supervisor/evaluatedocument.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Evaluatedocument;
-exports.default = Evaluatedocument;
-var _c;
-$RefreshReg$(_c, "Evaluatedocument");
-
-  $parcel$ReactRefreshHelpers$0c5c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require('react-refresh/runtime');
-function debounce(func, delay) {
-    var args1;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module.id + ' ' + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module) {
-    if (isReactRefreshBoundary(module.exports)) {
-        registerExportsForReactRefresh(module);
-        if (module.hot) {
-            module.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module.exports;
-            });
-            module.hot.accept(function(getParents) {
-                var prevExports = module.hot.data.prevExports;
-                var nextExports = module.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module) {
-    var exports = module.exports, id = module.id;
-    Refresh.register(exports, id + ' %exports%');
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + ' %exports% ' + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"few2M":[function(require,module,exports) {
+},{"history":"iE5Zp","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"few2M":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$949c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27732,7 +27364,127 @@ $RefreshReg$(_c, "Registration");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args1;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"786KC"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -31087,7 +30839,255 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"d9EP9":[function(require,module,exports) {
+},{"./../utils":"5By4s"}],"cvCU3":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0c5c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0c5c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Evaluatedocument = ()=>{
+    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 5,
+                columnNumber: 10
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                className: "text-center font-weight-bold text-primary",
+                children: "Evaluate Documents"
+            }, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 6,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 7,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 7,
+                columnNumber: 10
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 7,
+                columnNumber: 15
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "container",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("table", {
+                    class: "table table-bordered",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("thead", {
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "#"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 12,
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "Group Id"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 13,
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "Student Submission"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 14,
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "Status"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 15,
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "Marks"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 16,
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                        scope: "col",
+                                        children: "Action"
+                                    }, void 0, false, {
+                                        fileName: "components/supervisor/evaluatedocument.js",
+                                        lineNumber: 17,
+                                        columnNumber: 9
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/supervisor/evaluatedocument.js",
+                                lineNumber: 11,
+                                columnNumber: 7
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/supervisor/evaluatedocument.js",
+                            lineNumber: 10,
+                            columnNumber: 5
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            scope: "row",
+                                            children: "1"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 22,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "Mark"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 23,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "Otto"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 24,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@mdo"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 25,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@mdo"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 26,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@mdo"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 27,
+                                            columnNumber: 9
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/supervisor/evaluatedocument.js",
+                                    lineNumber: 21,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            scope: "row",
+                                            children: "2"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 30,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "Jacob"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 31,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "Thornton"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 32,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@fat"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 33,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@mdo"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 34,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                            children: "@mdo"
+                                        }, void 0, false, {
+                                            fileName: "components/supervisor/evaluatedocument.js",
+                                            lineNumber: 35,
+                                            columnNumber: 9
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/supervisor/evaluatedocument.js",
+                                    lineNumber: 29,
+                                    columnNumber: 7
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/supervisor/evaluatedocument.js",
+                            lineNumber: 20,
+                            columnNumber: 5
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/supervisor/evaluatedocument.js",
+                    lineNumber: 9,
+                    columnNumber: 5
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/supervisor/evaluatedocument.js",
+                lineNumber: 8,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/supervisor/evaluatedocument.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Evaluatedocument;
+exports.default = Evaluatedocument;
+var _c;
+$RefreshReg$(_c, "Evaluatedocument");
+
+  $parcel$ReactRefreshHelpers$0c5c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d9EP9":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$32a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
