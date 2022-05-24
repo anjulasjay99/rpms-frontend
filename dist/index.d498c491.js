@@ -25105,6 +25105,8 @@ var _registration = require("./components/supervisor/registration");
 var _registrationDefault = parcelHelpers.interopDefault(_registration);
 var _registration1 = require("./components/Views/Student/Registration");
 var _registrationDefault1 = parcelHelpers.interopDefault(_registration1);
+var _groupRegistration = require("./components/Views/Student/GroupRegistration");
+var _groupRegistrationDefault = parcelHelpers.interopDefault(_groupRegistration);
 function App() {
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
@@ -25124,6 +25126,14 @@ function App() {
                     }, void 0, false, {
                         fileName: "App.jsx",
                         lineNumber: 12,
+                        columnNumber: 7
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                        path: "/register-group",
+                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("groupReg", {}, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "App.jsx",
+                        lineNumber: 13,
                         columnNumber: 7
                     }, this)
                 ]
@@ -25153,7 +25163,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./components/supervisor/registration":"few2M","./components/Views/Student/Registration":"jZyLd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fdOAw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./components/supervisor/registration":"few2M","./components/Views/Student/Registration":"jZyLd","./components/Views/Student/GroupRegistration":"kOeyj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fdOAw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -31086,7 +31096,7 @@ $RefreshReg$(_c, "RegisterStudent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt"}],"iBZ80":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iBZ80":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33532,6 +33542,648 @@ const Button = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
 Button.displayName = 'Button';
 exports.default = Button;
 
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kn9T2","rW8VK","g9R30"], "g9R30", "parcelRequire68ab")
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kOeyj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3233 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3233.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+function groupReg() {
+    _s();
+    const [LeaderID, setLeaderIDNumber] = _react.useState("");
+    const [LeaderNIC, setLeaderNIC] = _react.useState("");
+    const [Leadermail, setLeaderMail] = _react.useState("");
+    const [Leadercontact, setLeaderContactNumber] = _react.useState("");
+    const [S2ID, setS2IDNumber] = _react.useState("");
+    const [S2NIC, setS2NIC] = _react.useState("");
+    const [S2mail, setS2Mail] = _react.useState("");
+    const [S2contact, setS2ContactNumber] = _react.useState("");
+    const [S3ID, setS3IDNumber] = _react.useState("");
+    const [S3NIC, setS3NIC] = _react.useState("");
+    const [S3mail, setS3Mail] = _react.useState("");
+    const [S3contact, setS3ContactNumber] = _react.useState("");
+    const [S4ID, setS4IDNumber] = _react.useState("");
+    const [S4NIC, setS4NIC] = _react.useState("");
+    const [S4mail, setS4Mail] = _react.useState("");
+    const [S4contact, setS4ContactNumber] = _react.useState("");
+    function submitClick(e1) {
+        e1.preventDefault();
+        newGroup = {
+            LeaderID,
+            LeaderNIC,
+            Leadermail,
+            Leadercontact,
+            S2ID,
+            S2NIC,
+            S2mail,
+            S2contact,
+            S3ID,
+            S3NIC,
+            S3mail,
+            S3contact,
+            S4ID,
+            S4NIC,
+            S4mail,
+            S4contact
+        };
+        _axiosDefault.default.post("http://localhost:8070/groups/add", newGroup).then((res)=>{
+            console.log(res);
+        //Add Toast
+        }).catch((e)=>{
+            console.log(e);
+        });
+    }
+    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Container, {
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "formContainer",
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                        className: "heading",
+                        children: "Member 1(Leader) Details"
+                    }, void 0, false, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 48,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Leader ID Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 51,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter SLIIT ID Number",
+                                        value: LeaderID,
+                                        onChange: (e)=>{
+                                            setLeaderIDNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 52,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 50,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "NIC"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 59,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter NIC",
+                                        value: LeaderNIC,
+                                        onChange: (e)=>{
+                                            setLeaderNIC(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 60,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 58,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Email"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 66,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "email",
+                                        placeholder: "Enter Email",
+                                        value: Leadermail,
+                                        onChange: (e)=>{
+                                            setLeaderMail(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 67,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Text, {
+                                        className: "text-muted",
+                                        children: "Please enter your SLIIT email."
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 70,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 65,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Contact Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 76,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "number",
+                                        placeholder: "Enter Contact Number",
+                                        value: Leadercontact,
+                                        onChange: (e)=>{
+                                            setLeaderContactNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 77,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 75,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 49,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                        className: "heading",
+                        children: "Member 2 Details"
+                    }, void 0, false, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 84,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Leader ID Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 88,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter SLIIT ID Number",
+                                        value: S2ID,
+                                        onChange: (e)=>{
+                                            setS2IDNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 89,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 87,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "NIC"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 96,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter NIC",
+                                        value: S2NIC,
+                                        onChange: (e)=>{
+                                            setS2NIC(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 97,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 95,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Email"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 103,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "email",
+                                        placeholder: "Enter Email",
+                                        value: S2mail,
+                                        onChange: (e)=>{
+                                            setS2Mail(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 104,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Text, {
+                                        className: "text-muted",
+                                        children: "Please enter your SLIIT email."
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 107,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 102,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Contact Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 113,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "number",
+                                        placeholder: "Enter Contact Number",
+                                        value: S2contact,
+                                        onChange: (e)=>{
+                                            setS2ContactNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 114,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 112,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 86,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                        className: "heading",
+                        children: "Member 3 Details"
+                    }, void 0, false, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 121,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Leader ID Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 124,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter SLIIT ID Number",
+                                        value: S3ID,
+                                        onChange: (e)=>{
+                                            setS3IDNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 125,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 123,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "NIC"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 132,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter NIC",
+                                        value: S3NIC,
+                                        onChange: (e)=>{
+                                            setS3NIC(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 133,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 131,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Email"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 139,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "email",
+                                        placeholder: "Enter Email",
+                                        value: S3mail,
+                                        onChange: (e)=>{
+                                            setS3Mail(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 140,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Text, {
+                                        className: "text-muted",
+                                        children: "Please enter your SLIIT email."
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 143,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 138,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Contact Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 149,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "number",
+                                        placeholder: "Enter Contact Number",
+                                        value: S3contact,
+                                        onChange: (e)=>{
+                                            setS3ContactNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 150,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 148,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 122,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                        className: "heading",
+                        children: "Member 4 Details"
+                    }, void 0, false, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 157,
+                        columnNumber: 13
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Leader ID Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 160,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter SLIIT ID Number",
+                                        value: S4ID,
+                                        onChange: (e)=>{
+                                            setS4IDNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 161,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 159,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "NIC"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 168,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "text",
+                                        placeholder: "Enter NIC",
+                                        value: S4NIC,
+                                        onChange: (e)=>{
+                                            setS4NIC(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 169,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 167,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Email"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 175,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "email",
+                                        placeholder: "Enter Email",
+                                        value: S4mail,
+                                        onChange: (e)=>{
+                                            setS4Mail(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 176,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Text, {
+                                        className: "text-muted",
+                                        children: "Please enter your SLIIT email."
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 179,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 174,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Group, {
+                                className: "mb-3",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Label, {
+                                        children: "Contact Number"
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 185,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Form.Control, {
+                                        type: "number",
+                                        placeholder: "Enter Contact Number",
+                                        value: S4contact,
+                                        onChange: (e)=>{
+                                            setS4ContactNumber(e.target.value);
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "components/Views/Student/GroupRegistration.js",
+                                        lineNumber: 186,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 184,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Button, {
+                                variant: "primary",
+                                type: "submit",
+                                onClick: (e)=>{
+                                    submitClick(e);
+                                },
+                                children: "Submit"
+                            }, void 0, false, {
+                                fileName: "components/Views/Student/GroupRegistration.js",
+                                lineNumber: 192,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Views/Student/GroupRegistration.js",
+                        lineNumber: 158,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "components/Views/Student/GroupRegistration.js",
+                lineNumber: 47,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "components/Views/Student/GroupRegistration.js",
+            lineNumber: 46,
+            columnNumber: 9
+        }, this)
+    }, void 0, false);
+}
+_s(groupReg, "n65OTx0y1hgDlWiYJwyh/k9c4tU=");
+exports.default = groupReg;
+
+  $parcel$ReactRefreshHelpers$3233.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","rW8VK","g9R30"], "g9R30", "parcelRequire68ab")
 
 //# sourceMappingURL=index.d498c491.js.map
