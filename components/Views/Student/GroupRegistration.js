@@ -1,7 +1,8 @@
 import React , {useState , useEffect} from 'react';
 import axios from 'axios'
+import { Container , Form , Button} from 'react-bootstrap';
 
-function groupReg(){
+function GroupReg(){
 
     const [LeaderID , setLeaderIDNumber ] = useState("");
     const [LeaderNIC , setLeaderNIC ] = useState("");
@@ -201,4 +202,4 @@ function groupReg(){
     )
 }
 
-export default groupReg;
+export default GroupReg;
