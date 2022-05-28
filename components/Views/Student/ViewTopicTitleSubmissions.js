@@ -1,19 +1,21 @@
 import React from 'react';
 import {useState , useEffect} from 'react';
-import { Table } from 'react-bootstrap';
+import { Table , Button } from 'react-bootstrap';
 import axios from 'axios';
-function viewSubstopic(){
+import { useNavigate } from 'react-router-dom';
+function ViewSubstopic(){
 
+    const navigate = useNavigate();
     const [topics , setTopics] = useState([]);
-    const id = 1
+    const id = "RSH_GRP1"
     useEffect(()=>{
-        axios.get(`http://localhost:8070/topicReg/getByStudent/{id}`).then((res) =>{
+        axios.get(`http://localhost:8070/topicReg/getByGroup/${id}`).then((res) =>{
             console.log(res);
-            setTopics(res);
+            setTopics(res.data);
         }).catch((err) =>{
             console.log(err);
         });
-    })
+    },[])
         return(
             <>
                 <h2>Topic Submissions to Supervisor</h2>
@@ -22,18 +24,18 @@ function viewSubstopic(){
                     <thead>
                         <tr>
                         <th>#</th>
-                        <th>Topic</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th style = {{textAlign :"center"}}>Topic</th>
+                        <th style = {{textAlign :"center"}}>Status</th>
+                        <th style = {{textAlign :"center"}}>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {topics.map((topic) => (
+                        {topics.map((topic , index) => (
                             <tr>
-                            <td>1</td>
+                            <td>{index + 1}</td>
                             <td>{topic.topic}</td>
-                            <td>{topic.isApproved}</td>
-                            <td>Resubmit Button / CoSupervisor selection</td>
+                            <td style = {{textAlign :"center"}}>{topic.isApproved == "Rejected" ? <Button variant = "danger" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}} >Rejected</Button> : topic.isApproved == "Accepted" ? <Button variant = "success" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Accepted</Button> : <Button variant = "secondary" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Pending</Button> }</td>
+                            <td style = {{textAlign :"center"}}>{topic.isApproved == "Rejected" ? <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate("/topic")}  >Resubmit Topic</Button> : <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate('co-supervisor')}  >Select Co-Supervisor</Button>}</td>
                             </tr>                            
                         ))}
 
@@ -44,4 +46,4 @@ function viewSubstopic(){
         )
 }
 
-export default viewSubstopic;
+export default ViewSubstopic;
