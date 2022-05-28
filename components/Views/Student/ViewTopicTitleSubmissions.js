@@ -18,6 +18,7 @@ function ViewSubstopic(){
     },[])
         return(
             <>
+            <div className = "titleSubmissions">
                 <h2>Topic Submissions to Supervisor</h2>
 
                 <Table striped bordered hover>
@@ -41,7 +42,59 @@ function ViewSubstopic(){
 
                     </tbody>
                 </Table>        
+            </div>
 
+            <div className="titleDocSubmission">
+
+            <h2>Topic Details Document Submission</h2>
+            <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th style = {{textAlign :"center"}}>Topic</th>
+                        <th style = {{textAlign :"center"}}>Status</th>
+                        <th style = {{textAlign :"center"}}>Feedback</th>
+                        <th style = {{textAlign :"center"}}>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {topics.map((topic , index) => (
+                            <tr>
+                            <td>{index + 1}</td>                
+                            <td>{topic.topic}</td>
+                            <td style = {{textAlign :"center"}}>{topic.isApproved == "Rejected" ? <Button variant = "danger" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}} >Rejected</Button> : topic.isApproved == "Accepted" ? <Button variant = "success" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Accepted</Button> : <Button variant = "secondary" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Pending</Button> }</td>
+                            <td>Feedback</td>
+                            <td style = {{textAlign :"center"}}>{topic.isApproved == "Rejected" ? <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate("/topic")}  >Resubmit New Topic</Button> : <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate('co-supervisor')}  >Select Co-Supervisor</Button>}</td>
+                            </tr>                            
+                        ))}
+
+                    </tbody>
+                </Table>    
+            </div>
+
+            <div className="projectSubmissions">
+
+            <h2>Project Submissions</h2>
+            <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th style = {{textAlign :"center"}}>Document Type</th>
+                        <th style = {{textAlign :"center"}}>Marks/Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {topics.map((topic , index) => (
+                            <tr>
+                            <td>{index + 1}</td>                
+                            <td>{topic.topic}</td>
+                            <td>Marks</td>
+                            </tr>                            
+                        ))}
+
+                    </tbody>
+                </Table>    
+            </div>
             </>
         )
 }
