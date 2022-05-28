@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { Card, CardTitle, Button, CardText, Row, Col } from "react-bootstrap";
 
 
+import { Row , Col } from "react-bootstrap";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
