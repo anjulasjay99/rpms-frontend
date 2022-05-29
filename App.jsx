@@ -1,9 +1,11 @@
 import  { React} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Evaluatedocument from "./components/supervisor/evaluatedocument";
-import Registration from "./components/supervisor/registration";
-import Topicacception from "./components/supervisor/topicacception";
+
 import RegisterStudent from "./components/Views/Student/Registration";
+import groupReg from "./components/Views/Student/GroupRegistration";
+import Registration from "./components/Views/staff/registration";
+import Evaluatedocument from "./components/Views/staff/Thesissubmissions";
+import Topicacception from "./components/Views/staff/topicacception";
 import GroupReg from "./components/Views/Student/GroupRegistration";
 import SubmitTopicDetails from "./components/Views/Student/SubmitTopicDetails";
 import SubmissionTypes from "./components/Views/Student/SubmissionTypes";
@@ -11,6 +13,8 @@ import TopicTitle from "./components/Views/Student/TopicTitleSub";
 import ViewSubstopic from "./components/Views/Student/ViewTopicTitleSubmissions";
 import CoSupervisorSelect from "./components/Views/Student/Cosupervisor";
 import StudentHome from "./components/Views/Student/StudentHome";
+import StaffHome from "./components/Views/staff/StaffHome";
+import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
 
 export default function App() {
   return(
@@ -29,6 +33,8 @@ export default function App() {
       <Route path="/topic" element = {<TopicTitle/>} />
       <Route path="/select-Cosupervisor" element = {<CoSupervisorSelect/>} />
        <Route path="/student-home" element = {<StudentHome/>} /> 
+       <Route path="/staff-home" element = {<StaffHome/>} /> 
+       <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
       </Routes>
       </BrowserRouter>
     </div>
