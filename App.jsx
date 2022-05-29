@@ -15,6 +15,8 @@ import CoSupervisorSelect from "./components/Views/Student/Cosupervisor";
 import StudentHome from "./components/Views/Student/StudentHome";
 import StaffHome from "./components/Views/staff/StaffHome";
 import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
+import LoginType from "./components/Views/logins/logintype";
+import { Login } from "@mui/icons-material";
 
 export default function App() {
   return(
@@ -35,6 +37,8 @@ export default function App() {
        <Route path="/student-home" element = {<StudentHome/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
+       <Route path="/logintype" element = {<LoginType/>} /> 
+       <Route path="/login" element = {<Login/>} /> 
       </Routes>
       </BrowserRouter>
     </div>

@@ -42,7 +42,7 @@ const Evaluatedocument = () => {
           <td>{submissions.indexOf(data)+1}</td>
           <td>{data.GroupId}</td>
           <td>{data.document}</td>
-          <td>{data.submissionDate}</td>
+          <td>{new Date(data.submissionDate).toLocaleString()}</td>
           <td>{data.marks}</td>
           <td>   
           <button onClick={
