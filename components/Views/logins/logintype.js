@@ -7,16 +7,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { Card, CardTitle, Button, CardText, Row, Col } from "reactstrap";
 
-// Material Kit 2 React components
-
-
-
-
-
 // Images
-
 import { MdOutlinePerson, MdOutlineEngineering ,MdSupervisorAccount } from "react-icons/md";
-import { GrUserAdmin } from "react-icons/gr";
 import "../css/admin.css";
 
 function LoginType() {
@@ -24,17 +16,17 @@ function LoginType() {
   const navigate = useNavigate();
   let loginType;
 
-  const adminClick = () => {
+  const panaelMemberClick = () => {
     loginType = 3;
     ReactSession.set("loginType", loginType);
     navigate("/login");
   };
-  const employeeClick = () => {
+  const supervisorClick = () => {
     loginType = 2;
     ReactSession.set("loginType", loginType);
     navigate("/login");
   };
-  const travellerClick = () => {
+  const StudentClick = () => {
     loginType = 1;
     ReactSession.set("loginType", loginType);
     navigate("/login");
@@ -70,7 +62,7 @@ function LoginType() {
                   width: "80%",
                 }}
               >
-                <div className="home-card-div" onClick={() => travellerClick()}>
+                <div className="home-card-div" onClick={() => StudentClick()}>
                   <div>
                     <MdOutlinePerson className="home-card-icon" />
                   </div>
@@ -79,7 +71,7 @@ function LoginType() {
                   </div>
                 </div>
 
-                <div className="home-card-div" onClick={() => employeeClick()}>
+                <div className="home-card-div" onClick={() => supervisorClick()}>
                   <div>
                     <MdSupervisorAccount className="home-card-icon" />
                   </div>
@@ -88,7 +80,7 @@ function LoginType() {
                   </div>
                 </div>
 
-                <div className="home-card-div" onClick={() => adminClick()}>
+                <div className="home-card-div" onClick={() => panaelMemberClick()}>
                   <div>
                     <MdOutlineEngineering className="home-card-icon" />
                   </div>
