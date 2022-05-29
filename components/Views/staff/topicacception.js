@@ -2,7 +2,7 @@ import { ControlCameraSharp } from '@mui/icons-material';
 import { getAccordionDetailsUtilityClass } from '@mui/material';
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
-import '../css/topicacception.css'
+import '../../css/topicacception.css'
 
 const Topicacception = () => {
 

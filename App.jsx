@@ -1,10 +1,11 @@
 import  { React} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Evaluatedocument from "./components/supervisor/evaluatedocument";
-import Registration from "./components/supervisor/registration";
-import Topicacception from "./components/supervisor/topicacception";
+
 import RegisterStudent from "./components/Views/Student/Registration";
 import groupReg from "./components/Views/Student/GroupRegistration";
+import Registration from "./components/Views/staff/registration";
+import Evaluatedocument from "./components/Views/staff/evaluatedocument";
+import Topicacception from "./components/Views/staff/topicacception";
 export default function App() {
   return(
     <div>
