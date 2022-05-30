@@ -13,10 +13,6 @@ const Evaluatedocument = () => {
     })
   },[])
 
-
-
-  
-
   return (
     <div><br/>  
     <h1 className="text-center font-weight-bold text-primary">Evaluate Thesis</h1>
@@ -42,8 +38,8 @@ const Evaluatedocument = () => {
           <td>{submissions.indexOf(data)+1}</td>
           <td>{data.GroupId}</td>
           <td>{data.document}</td>
-          <td>{data.submissionDate}</td>
-          <td>{data.marks}</td>
+          <td>{new Date(data.submissionDate).toLocaleString()}</td>
+          <td>{data.marks == 0 ? "notmarked" : data.marks} </td>
           <td>   
           <button onClick={
             ()=>{

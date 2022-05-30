@@ -11,19 +11,19 @@ import Switch from "@mui/material/Switch";
 import Grid from "@mui/material/Grid";
 
 
-import Box from "components/Box";
-import Typography from "components/Typography";
-import Input from "components/Input";
-import Button from "components/Button";
+// import Box from "components/Box";
+// import Typography from "components/Typography";
+// import Input from "components/Input";
+// import Button from "components/Button";
 
-import { Box } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Input } from "@mui/material";
-import { Button } from "@mui/material";
+import  Box  from "@mui/material/Box";
+import Typography  from "@mui/material/Typography";
+import Input from "@mui/material/Input";
+import Button  from "@mui/material/Button";
 
 
 // Images
-import bgImage from "assets/images/hoteLogin.jpg";
+import bgImage from "./images/hoteLogin.jpg";
 
 function Login() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -36,97 +36,96 @@ function Login() {
 
   let userType;
 
-  useEffect(() => {
-    ReactSession.setStoreType("memory");
-    userType = ReactSession.get("loginType");
-    console.log(userType);
-    if (userType === null || userType === undefined) {
-      navigate("/loginType");
-    }
-  });
+  // useEffect(() => {
+  //   ReactSession.setStoreType("memory");
+  //   userType = ReactSession.get("loginType");
+  //   console.log(userType);
+  //   if (userType === null || userType === undefined) {
+  //     navigate("/loginType");
+  //   }
+  // });
 
-  function onClickSignIn(e) {
-    console.log(userType);
-    e.preventDefault();
-    if (userType === 1) {
-      axios
-        .get(`http://localhost:8280/logins/traveller/checkusername/${username}`)
-        .then((res) => {
-          if (res.data === true) {
+  // function onClickSignIn(e) {
+  //   console.log(userType);
+  //   e.preventDefault();
+  //   if (userType === 1) {
+  //     axios
+  //       .get(`http://localhost:8280/logins/traveller/checkusername/${username}`)
+  //       .then((res) => {
+  //         if (res.data === true) {
 
-            axios.get(`http://localhost:8280/logins/traveller/info/${username}`).then((r) => {
-              if (password !== r.data[0].Password) {
-                console.log(r.data[0].Password);
-                alert("Check Password!");
-              } else {
-                ReactSession.set("loginData", r.data[0]);
+  //           axios.get(`http://localhost:8280/logins/traveller/info/${username}`).then((r) => {
+  //             if (password !== r.data[0].Password) {
+  //               console.log(r.data[0].Password);
+  //               alert("Check Password!");
+  //             } else {
+  //               ReactSession.set("loginData", r.data[0]);
 
-                sessionStorage.setItem("username", username);
-                navigate("/view-rooms");
-                // Redirect to pages based on role.
-              }
-            });
-          } else {
-            alert("Check username!");
-          }
-        })
-        .catch((er) => {
-          console.log(er);
-        });
-    } else if (userType === 2) {
-      axios
-        .get(`http://localhost:8280/logins/employee/checkusername/${username}`)
-        .then((res) => {
-          if (res.data === true) {
+  //               sessionStorage.setItem("username", username);
+  //               navigate("/view-rooms");
+  //               // Redirect to pages based on role.
+  //             }
+  //           });
+  //         } else {
+  //           alert("Check username!");
+  //         }
+  //       })
+  //       .catch((er) => {
+  //         console.log(er);
+  //       });
+  //   } else if (userType === 2) {
+  //     axios
+  //       .get(`http://localhost:8280/logins/employee/checkusername/${username}`)
+  //       .then((res) => {
+  //         if (res.data === true) {
 
-            axios.get(`http://localhost:8280/logins/employee/info/${username}`).then((r) => {
-              console.log(r.data.password);
+  //           axios.get(`http://localhost:8280/logins/employee/info/${username}`).then((r) => {
+  //             console.log(r.data.password);
             
-              console.log(r.data);
-              if (password !== r.data[0].password) {
+  //             console.log(r.data);
+  //             if (password !== r.data[0].password) {
 
-                alert("Check Password!");
-              } else {
-                ReactSession.set("loginData", r.data[0]);
-                navigate("/employee-home");
-                // Redirect to pages based on role.
-              }
-            });
-          } else {
-            alert("Check username!");
-          }
-        })
-        .catch((er) => {
-          console.log(er);
-        });
-    } else {
-      axios
-        .get(`http://localhost:8280/logins/admin/getusername/${username}`)
-        .then((res) => {
-          if (res.data === true) {
-            axios.get(`http://localhost:8280/logins/admin/info`).then((r) => {
-              if (password !== r.data.password) {
-                alert("Check Password!");
-              } else {
-                ReactSession.set("loginData", r.data);
-                navigate("/admin-home");
-              }
-            });
-          } else {
-            alert("Check username!");
-          }
-        })
-        .catch((er) => {
-          console.log(er);
-        });
-    }
+  //               alert("Check Password!");
+  //             } else {
+  //               ReactSession.set("loginData", r.data[0]);
+  //               navigate("/employee-home");
+  //               // Redirect to pages based on role.
+  //             }
+  //           });
+  //         } else {
+  //           alert("Check username!");
+  //         }
+  //       })
+  //       .catch((er) => {
+  //         console.log(er);
+  //       });
+  //   } else {
+  //     axios
+  //       .get(`http://localhost:8280/logins/admin/getusername/${username}`)
+  //       .then((res) => {
+  //         if (res.data === true) {
+  //           axios.get(`http://localhost:8280/logins/admin/info`).then((r) => {
+  //             if (password !== r.data.password) {
+  //               alert("Check Password!");
+  //             } else {
+  //               ReactSession.set("loginData", r.data);
+  //               navigate("/admin-home");
+  //             }
+  //           });
+  //         } else {
+  //           alert("Check username!");
+  //         }
+  //       })
+  //       .catch((er) => {
+  //         console.log(er);
+  //       });
+  //   }
 
 
-  }
+  // }
 
   return (
     <>
-      <DefaultNavbar routes={[]} transparent light />
       <Box
         position="absolute"
         top={0}
