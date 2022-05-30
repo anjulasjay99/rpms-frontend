@@ -15,17 +15,19 @@ import CoSupervisorSelect from "./components/Views/Student/Cosupervisor";
 import StudentHome from "./components/Views/Student/StudentHome";
 import StaffHome from "./components/Views/staff/StaffHome";
 import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
-import LoginType from "./components/Views/logins/logintype";
-import { Login } from "@mui/icons-material";
+
+
+import LoginType from "./components/Shared/LoginType";
+import Login from "./components/Shared/Login";
 
 export default function App() {
   return(
     <div>
       <BrowserRouter>
       <Routes>
-      <Route path="/evaluate" element = {<Evaluatedocument/>} exact/>
+      <Route path="/evaluate-thesis" element = {<Evaluatedocument/>} exact/>
       <Route path="/accepttopic" element = {<Topicacception/>} exact/>
-      <Route path="/register" element = {<Registration/>} />
+      <Route path="/register-staff" element = {<Registration/>} />
       <Route path="/register-student" element = {<RegisterStudent/>} />
       <Route path="/register-group" element = {<GroupReg/>} />
       <Route path="/submissions" element = {<SubmitTopicDetails/>} />

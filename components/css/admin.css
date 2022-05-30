@@ -1,0 +1,41 @@
+.home-card-icon {
+  transform: scale(8);
+  margin-bottom: 60px;
+}
+
+.home-card-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.home-card-div h4 {
+  font-size: 40px;
+}
+
+.home-card-div:hover {
+  color: white;
+  background-color: rgb(80, 141, 255);
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  height: 50px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
