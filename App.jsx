@@ -11,7 +11,7 @@ import TopicTitle from "./components/Views/Student/TopicTitleSub";
 import ViewSubstopic from "./components/Views/Student/ViewTopicTitleSubmissions";
 import CoSupervisorSelect from "./components/Views/Student/Cosupervisor";
 import StudentHome from "./components/Views/Student/StudentHome";
-
+import LoginStudent from "./components/Shared/Login";
 export default function App() {
   return(
     <div>
@@ -29,6 +29,8 @@ export default function App() {
       <Route path="/topic" element = {<TopicTitle/>} />
       <Route path="/select-Cosupervisor" element = {<CoSupervisorSelect/>} />
        <Route path="/student-home" element = {<StudentHome/>} /> 
+       <Route path="/student-login" element = {<LoginStudent/>} /> 
+
       </Routes>
       </BrowserRouter>
     </div>

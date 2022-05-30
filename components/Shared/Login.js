@@ -1,6 +1,4 @@
-/* eslint-disable prefer-const */
-/* eslint-disable no-else-return */
-/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ReactSession } from "react-client-session";
@@ -11,10 +9,7 @@ import Switch from "@mui/material/Switch";
 import Grid from "@mui/material/Grid";
 
 
-import Box from "components/Box";
-import Typography from "components/Typography";
-import Input from "components/Input";
-import Button from "components/Button";
+
 
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
@@ -23,9 +18,9 @@ import { Button } from "@mui/material";
 
 
 // Images
-import bgImage from "assets/images/hoteLogin.jpg";
+// import bgImage from "assets/images/hoteLogin.jpg";
 
-function Login() {
+function LoginStudent() {
   const [rememberMe, setRememberMe] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -50,11 +45,11 @@ function Login() {
     e.preventDefault();
     if (userType === 1) {
       axios
-        .get(`http://localhost:8280/logins/traveller/checkusername/${username}`)
+        .get(`http://localhost:8070/students/checkUsername/${username}`)
         .then((res) => {
           if (res.data === true) {
 
-            axios.get(`http://localhost:8280/logins/traveller/info/${username}`).then((r) => {
+            axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
               if (password !== r.data[0].Password) {
                 console.log(r.data[0].Password);
                 alert("Check Password!");
@@ -222,4 +217,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginStudent;
