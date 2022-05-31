@@ -19,7 +19,7 @@ import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
 
 
 import LoginType from "./components/Shared/LoginType";
-import Login from "./components/Shared/Login";
+
 
 export default function App() {
   return(
@@ -43,7 +43,6 @@ export default function App() {
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
        <Route path="/logintype" element = {<LoginType/>} /> 
-       <Route path="/login" element = {<Login/>} /> 
       </Routes>
       </BrowserRouter>
     </div>

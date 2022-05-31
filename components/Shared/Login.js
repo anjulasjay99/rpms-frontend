@@ -43,21 +43,21 @@ function LoginStudent() {
   //   }
   // });
 
-  function onClickSignIn(e) {
-    console.log(userType);
-    e.preventDefault();
-    if (userType === 1) {
-      axios
-        .get(`http://localhost:8070/students/checkUsername/${username}`)
-        .then((res) => {
-          if (res.data === true) {
+  // function onClickSignIn(e) {
+  //   console.log(userType);
+  //   e.preventDefault();
+  //   if (userType === 1) {
+  //     axios
+  //       .get(`http://localhost:8070/students/checkUsername/${username}`)
+  //       .then((res) => {
+  //         if (res.data === true) {
 
-            axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
-              if (password !== r.data[0].Password) {
-                console.log(r.data[0].Password);
-                alert("Check Password!");
-              } else {
-                ReactSession.set("loginData", r.data[0]);
+  //           axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
+  //             if (password !== r.data[0].Password) {
+  //               console.log(r.data[0].Password);
+  //               alert("Check Password!");
+  //             } else {
+  //               ReactSession.set("loginData", r.data[0]);
 
   //               sessionStorage.setItem("username", username);
   //               navigate("/view-rooms");
@@ -120,7 +120,7 @@ function LoginStudent() {
   //   }
 
 
-  // }
+  //}
 
   return (
     <>
@@ -219,4 +219,4 @@ function LoginStudent() {
   );
 }
 
-export default LoginStudent;
+export default LoginStudent
