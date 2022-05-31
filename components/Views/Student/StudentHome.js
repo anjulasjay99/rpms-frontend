@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import "../css/homeCards.css";
 import { Row , Col } from "react-bootstrap";
 import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
+import StudentHeader from "../../Shared/Header-student";
 
 function StudentHome(){
 
@@ -14,6 +15,7 @@ function StudentHome(){
 
     return(
         <>
+        <StudentHeader/>
            <Box
             width="100%"
             />

@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { FaUserTie } from "react-icons/fa";
 import { RecentActorsOutlined } from "@mui/icons-material";
 import { Dropdown , DropdownButton } from "react-bootstrap";
-
+import StudentHeader from "../../Shared/Header-student";
 function TopicTitle() {
 
     const researchAreas = ["Machine Learning" , "Deep Learning" , "Parallel Computing" , "Artificial Intelligence" , "Robotics"];
@@ -45,6 +45,8 @@ function TopicTitle() {
 
     return(
         <>
+     <StudentHeader/>
+
         <Container>
         <Typography variant="h3" mb={5}  sx = {{
                     fontWeight : "bold",

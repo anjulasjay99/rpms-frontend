@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import StudentHeader from "../../Shared/Header-student";
 
 
 import { Row , Col } from "react-bootstrap";
@@ -35,7 +36,7 @@ function SubmissionTypes() {
 
   return (
     <>
-
+      <StudentHeader/>
       <Box
         // minHeight="75vh"
         width="100%"
