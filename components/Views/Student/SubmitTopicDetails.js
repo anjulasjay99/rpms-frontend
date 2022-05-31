@@ -5,6 +5,10 @@ import { useState , useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Container ,  Button} from 'react-bootstrap';
 import { FaFileDownload } from "react-icons/fa";
+import "../css/homeCards.css";
+import { Row , Col } from "react-bootstrap";
+import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
+import { borderColor } from "@mui/system";
 function SubmitTopicDetails(){
     
     const [selectedFile , setSelectedFile] = useState("");
@@ -96,28 +100,49 @@ function SubmitTopicDetails(){
 
     return(
         <>
-            <Container>
-                <h2>{name}</h2>
+            <Container style = {{}}>
+                <h2 style = {{fontWeight : "bold"}}>{name}</h2> <br/>
 
                 <div className="mb-3">
-                    <label htmlFor="formFile" className="form-label">Submit your document below</label>
+                    <label htmlFor="formFile" className="form-label" style={{fontSize:"20px" }}>Submit your document below</label>
                     <input className="form-control" type="file" id="formFile" onChange={(event)=>{
                         onFileChange(event);
-                    }}/>
-                    <Button variant="primary" onClick = {() =>{
+                    }}/> <br />
+                    <Button variant="primary" style = {{marginLeft : "94%"}} onClick = {() =>{
                         onSubmitClick();
                     }}>Submit</Button>
                 </div>
 
             </Container>
+                    <hr />
+            <Container >
+            <Row>
+                <Col >
+                    <div  >
+                    <h2 style={{marginTop : "4rem"}}>Download document template</h2> <br />
+                    <Button variant="primary" size="lg" onClick = {() =>{
+                        downloadClick(name);
+                    }}>
+                        Download<FaFileDownload></FaFileDownload>
+                    </Button>
+                    </div>  
+                </Col>  
 
-            <Container>
-            <h2>Download document template</h2>
-            <Button variant="primary" size="lg" onClick = {() =>{
-                downloadClick(name);
-            }}><FaFileDownload></FaFileDownload>
-                Download
-            </Button>
+                <Col>
+                <div className="home-card-div" onClick={(() =>{
+                            navigate('/submissionTypes');
+                            
+                        })}>
+                            <div>
+                            <BsFillFileEarmarkArrowUpFill className="home-card-icon" />
+                            </div>
+                            <div>
+                            <h4>View Other Submissions</h4>
+                            </div>
+                    </div>  
+
+                </Col>
+            </Row>
             </Container>
         </>
     )

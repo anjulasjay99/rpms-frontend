@@ -1,6 +1,4 @@
-/* eslint-disable prefer-const */
-/* eslint-disable no-else-return */
-/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ReactSession } from "react-client-session";
@@ -23,9 +21,9 @@ import Button  from "@mui/material/Button";
 
 
 // Images
-import bgImage from "./images/hoteLogin.jpg";
+// import bgImage from "assets/images/hoteLogin.jpg";
 
-function Login() {
+function LoginStudent() {
   const [rememberMe, setRememberMe] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -45,21 +43,21 @@ function Login() {
   //   }
   // });
 
-  // function onClickSignIn(e) {
-  //   console.log(userType);
-  //   e.preventDefault();
-  //   if (userType === 1) {
-  //     axios
-  //       .get(`http://localhost:8280/logins/traveller/checkusername/${username}`)
-  //       .then((res) => {
-  //         if (res.data === true) {
+  function onClickSignIn(e) {
+    console.log(userType);
+    e.preventDefault();
+    if (userType === 1) {
+      axios
+        .get(`http://localhost:8070/students/checkUsername/${username}`)
+        .then((res) => {
+          if (res.data === true) {
 
-  //           axios.get(`http://localhost:8280/logins/traveller/info/${username}`).then((r) => {
-  //             if (password !== r.data[0].Password) {
-  //               console.log(r.data[0].Password);
-  //               alert("Check Password!");
-  //             } else {
-  //               ReactSession.set("loginData", r.data[0]);
+            axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
+              if (password !== r.data[0].Password) {
+                console.log(r.data[0].Password);
+                alert("Check Password!");
+              } else {
+                ReactSession.set("loginData", r.data[0]);
 
   //               sessionStorage.setItem("username", username);
   //               navigate("/view-rooms");
@@ -221,4 +219,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginStudent;
