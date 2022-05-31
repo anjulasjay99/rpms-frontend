@@ -34,14 +34,7 @@ function LoginStudent() {
 
   let userType;
 
-  // useEffect(() => {
-  //   ReactSession.setStoreType("memory");
-  //   userType = ReactSession.get("loginType");
-  //   console.log(userType);
-  //   if (userType === null || userType === undefined) {
-  //     navigate("/loginType");
-  //   }
-  // });
+
 
   function onClickSignIn(e) {
     console.log(userType);
@@ -58,70 +51,22 @@ function LoginStudent() {
                 alert("Check Password!");
               } else {
                 ReactSession.set("loginData", r.data[0]);
+              }
+            }).catch((err) => console.log(err));
+          }
+          else {
+            alert("Check Username !");
+          }   
+          
+        }).catch((err) => console.log(err));
+    }    
+    else if (userType == 2){
 
-  //               sessionStorage.setItem("username", username);
-  //               navigate("/view-rooms");
-  //               // Redirect to pages based on role.
-  //             }
-  //           });
-  //         } else {
-  //           alert("Check username!");
-  //         }
-  //       })
-  //       .catch((er) => {
-  //         console.log(er);
-  //       });
-  //   } else if (userType === 2) {
-  //     axios
-  //       .get(`http://localhost:8280/logins/employee/checkusername/${username}`)
-  //       .then((res) => {
-  //         if (res.data === true) {
-
-  //           axios.get(`http://localhost:8280/logins/employee/info/${username}`).then((r) => {
-  //             console.log(r.data.password);
-            
-  //             console.log(r.data);
-  //             if (password !== r.data[0].password) {
-
-  //               alert("Check Password!");
-  //             } else {
-  //               ReactSession.set("loginData", r.data[0]);
-  //               navigate("/employee-home");
-  //               // Redirect to pages based on role.
-  //             }
-  //           });
-  //         } else {
-  //           alert("Check username!");
-  //         }
-  //       })
-  //       .catch((er) => {
-  //         console.log(er);
-  //       });
-  //   } else {
-  //     axios
-  //       .get(`http://localhost:8280/logins/admin/getusername/${username}`)
-  //       .then((res) => {
-  //         if (res.data === true) {
-  //           axios.get(`http://localhost:8280/logins/admin/info`).then((r) => {
-  //             if (password !== r.data.password) {
-  //               alert("Check Password!");
-  //             } else {
-  //               ReactSession.set("loginData", r.data);
-  //               navigate("/admin-home");
-  //             }
-  //           });
-  //         } else {
-  //           alert("Check username!");
-  //         }
-  //       })
-  //       .catch((er) => {
-  //         console.log(er);
-  //       });
-  //   }
-
-
-  // }
-
+    } 
+    else {
+       
+    }   
+  }
   return (
     <>
       <Box
