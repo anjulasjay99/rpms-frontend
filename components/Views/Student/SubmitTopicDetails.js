@@ -9,8 +9,11 @@ import "../css/homeCards.css";
 import { Row , Col } from "react-bootstrap";
 import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
 import { borderColor } from "@mui/system";
+import StudentHeader from "../../Shared/Header-student";
+import { useNavigate } from "react-router-dom";
 function SubmitTopicDetails(){
     
+    const navigate = useNavigate();
     const [selectedFile , setSelectedFile] = useState("");
     const [fileId , setId] = useState("");
     const [doc , setDoc] = useState("");
@@ -100,6 +103,8 @@ function SubmitTopicDetails(){
 
     return(
         <>
+        <StudentHeader/>
+
             <Container style = {{}}>
                 <h2 style = {{fontWeight : "bold"}}>{name}</h2> <br/>
 

@@ -2,7 +2,6 @@ import  { React} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import RegisterStudent from "./components/Views/Student/Registration";
-import groupReg from "./components/Views/Student/GroupRegistration";
 import Registration from "./components/Views/staff/registration";
 import Evaluatedocument from "./components/Views/staff/Thesissubmissions";
 import Topicacception from "./components/Views/staff/topicacception";
@@ -36,7 +35,7 @@ export default function App() {
       {/* <Route path="/topic-registration" element = {<Topictitle/>}  /> */}
       <Route path="/ViewSubmissions" element = {<ViewSubstopic/>} />
       <Route path="/topic" element = {<TopicTitle/>} />
-      <Route path="/select-Cosupervisor" element = {<CoSupervisorSelect/>} />
+      <Route path="/co-supervisor" element = {<CoSupervisorSelect/>} />
        <Route path="/student-home" element = {<StudentHome/>} /> 
        <Route path="/student-login" element = {<LoginStudent/>} /> 
 
