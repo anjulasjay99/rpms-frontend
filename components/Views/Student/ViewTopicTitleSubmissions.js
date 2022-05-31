@@ -3,6 +3,7 @@ import {useState , useEffect} from 'react';
 import { Table , Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Row , Col , Container } from 'react-bootstrap';
 function ViewSubstopic(){
 
     const navigate = useNavigate();
@@ -18,6 +19,9 @@ function ViewSubstopic(){
     },[])
         return(
             <>
+            <Container>
+            <Row>      
+            
             <div className = "titleSubmissions">
                 <h2>Topic Submissions to Supervisor</h2>
 
@@ -43,7 +47,8 @@ function ViewSubstopic(){
                     </tbody>
                 </Table>        
             </div>
-
+            </Row>  
+            <Row>             
             <div className="titleDocSubmission">
 
             <h2>Topic Details Document Submission</h2>
@@ -71,7 +76,8 @@ function ViewSubstopic(){
                     </tbody>
                 </Table>    
             </div>
-
+            </Row> 
+            <Row>                
             <div className="projectSubmissions">
 
             <h2>Project Submissions</h2>
@@ -94,7 +100,10 @@ function ViewSubstopic(){
 
                     </tbody>
                 </Table>    
+               
             </div>
+            </Row> 
+            </Container>
             </>
         )
 }
