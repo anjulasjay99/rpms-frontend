@@ -6,42 +6,37 @@ import { ReactSession } from "react-client-session";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography  from "@mui/material/Typography";
-import { Card, CardTitle, Button, CardText, Row, Col } from "reactstrap";
+import {  Row, Col } from "reactstrap";
 
 // Images
-import { MdOutlinePerson, MdOutlineEngineering ,MdSupervisorAccount } from "react-icons/md";
-import "../css/admin.css";
+import { GiConfirmed } from "react-icons/gi";
+import { HiDocumentText,HiOutlineDocumentText } from "react-icons/hi";
+import "../css/staffHome.css";
 
-function LoginType() {
-  ReactSession.setStoreType("memory");
+function StaffHome() {
+
   const navigate = useNavigate();
-  let loginType;
-
-  const panaelMemberClick = () => {
-    loginType = 3;
-    ReactSession.set("loginType", loginType);
-    navigate("/login");
+  const AcceptTopicClick = () => {
+    navigate("/accepttopic");
   };
-  const supervisorClick = () => {
-    loginType = 2;
-    ReactSession.set("loginType", loginType);
-    navigate("/login");
+  const EvaluateThesisClick = () => {
+    navigate("/evaluate-thesis");
   };
-  const StudentClick = () => {
-    loginType = 1;
-    ReactSession.set("loginType", loginType);
+  const EvaluateProjectProposalsClick = () => {
     navigate("/login");
   };
 
   useEffect(() => {}, []);
+ 
 
   return (
+    
     <>
         <center>
         <br/>
         <Grid py={2} mx={3}>
         <Typography variant="h2" ml={2}>
-            Login
+            Staff Home
           </Typography>
         </Grid>
         </center>
@@ -63,30 +58,30 @@ function LoginType() {
                   width: "100%",
                 }}
               >
-                <div className="home-card-div" onClick={() => StudentClick()}>
+                <div className="home-card-div" onClick={() => AcceptTopicClick()}>
                   <div>
-                    <MdOutlinePerson className="home-card-icon" />
+                    <GiConfirmed className="home-card-icon" />
                   </div>
                   <div>
-                    <h4>Student</h4>
-                  </div>
-                </div>
-
-                <div className="home-card-div" onClick={() => supervisorClick()}>
-                  <div>
-                    <MdSupervisorAccount className="home-card-icon" />
-                  </div>
-                  <div>
-                    <h4>Supervisor/Co-Supervisor</h4>
+                    <h4>Accept Topics</h4>
                   </div>
                 </div>
 
-                <div className="home-card-div" onClick={() => panaelMemberClick()}>
+                <div className="home-card-div" onClick={() => EvaluateThesisClick()}>
                   <div>
-                    <MdOutlineEngineering className="home-card-icon" />
+                    <HiDocumentText className="home-card-icon" />
                   </div>
                   <div>
-                    <h4>Panel Member</h4>
+                    <h4>Evaluate Thesis</h4>
+                  </div>
+                </div>
+
+                <div className="home-card-div" onClick={() => EvaluateProjectProposalsClick()}>
+                  <div>
+                    <HiOutlineDocumentText className="home-card-icon" />
+                  </div>
+                  <div>
+                    <h4>Evaluate Proposal Document</h4>
                   </div>
                 </div>
               </div>
@@ -99,4 +94,4 @@ function LoginType() {
   );
 }
 
-export default LoginType;
+export default StaffHome;
