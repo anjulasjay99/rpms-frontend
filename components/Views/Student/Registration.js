@@ -33,14 +33,14 @@ function RegisterStudent() {
     return(
         <>
             <Form>
-                <Form.Group className="mb-3">
-                    <Form.Label>First Name</Form.Label>
+                <Form.Group className="mb-2">
+                    <Form.Label>First Names</Form.Label>
                     <Form.Control type="text" value = {firstName} placeholder="Enter First Name" onChange = {(e)=>{
                           setfName(e.target.value);  
                     }} />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-2">
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control type="text" value = {lastName} placeholder="Enter your Last Name" onChange = {(e)=>{
                         setlName(e.target.value);
