@@ -34,14 +34,7 @@ function LoginStudent() {
 
   let userType;
 
-  // useEffect(() => {
-  //   ReactSession.setStoreType("memory");
-  //   userType = ReactSession.get("loginType");
-  //   console.log(userType);
-  //   if (userType === null || userType === undefined) {
-  //     navigate("/loginType");
-  //   }
-  // });
+
 
   function onClickSignIn(e) {
     console.log(userType);
@@ -71,7 +64,7 @@ function LoginStudent() {
 
     } 
     else {
-
+       
     }   
   }
   return (
