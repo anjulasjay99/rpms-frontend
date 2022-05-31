@@ -3,6 +3,7 @@ import { useState , useEffect } from "react";
 import { Container ,  Button , Form , Card , CardImg , CardGroup} from 'react-bootstrap';
 import axios from 'axios'
 import { Button } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import { FaUserTie } from "react-icons/fa";
 import { RecentActorsOutlined } from "@mui/icons-material";
 import { Dropdown , DropdownButton } from "react-bootstrap";
@@ -45,15 +46,22 @@ function TopicTitle() {
     return(
         <>
         <Container>
+        <Typography variant="h3" mb={5}  sx = {{
+                    fontWeight : "bold",
+                    
+                }}>
+                    Title Submission
+                </Typography> 
         <div className='TopicTitleSection'>
+   
         <Form>
                 <Form.Group className="mb-3" >
-                <Form.Label>Topic</Form.Label>
+                <Form.Label style = {{fontSize : "1.7rem"}}>Topic</Form.Label> <br />
                 <Form.Control type="text" placeholder="Enter the Title" value = {title} onChange = {(e) =>{
                     seTitle(e.target.value)
                 }}/>
                 </Form.Group>
-
+                <br />
                 <Form.Group className="mb-3" >
                  <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onSelect={(e) =>{
@@ -76,7 +84,11 @@ function TopicTitle() {
 
         </Form>        
         </div>
-        <div className = 'SupervisorSection'>
+        </Container>
+        <br />
+        <hr />
+        <Container>
+        <div className = 'SupervisorSection' style = {{marginTop : "3.5rem"}}>
         {supervisors.map((supervisor) =>(
         <Card style={{ width: '18rem' , borderRadius:'1.5rem' }}>
         <Card.Img variant="top"  />
@@ -103,8 +115,8 @@ function TopicTitle() {
         ))}   
 
         </div>
-
-        <Button variant="contained" style={{width : "100%"}} onClick = {() =>{
+        
+        <Button variant="contained" style={{width : "100%" , marginTop : "4rem"}} onClick = {() =>{
             submitClick();
         }}>Submit</Button>
 

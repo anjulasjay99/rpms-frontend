@@ -50,7 +50,9 @@ function SubmissionTypes() {
       />
       <Container>
         <Grid py={2} mx={3}>
-          <Typography variant="h3" ml={2}>
+          <Typography variant="h3" ml={2} sx = {{
+            fontWeight : "bold"
+          }}>
             Submissions
           </Typography>
         </Grid>
