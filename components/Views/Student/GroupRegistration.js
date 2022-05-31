@@ -1,6 +1,7 @@
 import React , {useState , useEffect} from 'react';
 import axios from 'axios'
-import { Container , Form , Button} from 'react-bootstrap';
+import { Container , Form , Button , Row , Col} from 'react-bootstrap';
+import { Typography , Grid } from '@mui/material';
 
 function GroupReg(){
 
@@ -45,116 +46,132 @@ function GroupReg(){
     return(
         <>
         <Container>
-        <div className = "formContainer">
-            <h2 className = "heading">Member 1(Leader) Details</h2>
-            <Form>
-                <Form.Group className="mb-3" >
-                <Form.Label>Leader ID Number</Form.Label>
-                <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {LeaderID} onChange = {(e) =>{
-                    setLeaderIDNumber(e.target.value)
-                }}/>
+        <Grid py={4}>
+                <Typography variant="h3"  sx = {{
+                    fontWeight : "bold"
+                }}>
+                    Group Registration
+                </Typography>
+                </Grid>
+                    <div className = "formContainer">
+                <Row>
+                    <Col>        
+                    <h2 className = "heading">Member 1(Leader) Details</h2>
+                        <Form>
+                            <Form.Group className="mb-3" >
+                            <Form.Label>Leader ID Number</Form.Label>
+                            <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {LeaderID} onChange = {(e) =>{
+                                setLeaderIDNumber(e.target.value)
+                            }}/>
 
-                </Form.Group>
-        
-                <Form.Group className="mb-3" >
-                <Form.Label>NIC</Form.Label>
-                <Form.Control type="text" placeholder="Enter NIC" value = {LeaderNIC} onChange = {(e) =>{
-                    setLeaderNIC(e.target.value)
-                }} />
-                </Form.Group>
+                            </Form.Group>
+                    
+                            <Form.Group className="mb-3" >
+                            <Form.Label>NIC</Form.Label>
+                            <Form.Control type="text" placeholder="Enter NIC" value = {LeaderNIC} onChange = {(e) =>{
+                                setLeaderNIC(e.target.value)
+                            }} />
+                            </Form.Group>
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter Email" value = {Leadermail} onChange = {(e) =>{
-                    setLeaderMail(e.target.value)
-                }} />
-                <Form.Text className="text-muted">
-                    Please enter your SLIIT email.
-                </Form.Text> 
-                </Form.Group>
+                            <Form.Group className="mb-3" >
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" placeholder="Enter Email" value = {Leadermail} onChange = {(e) =>{
+                                setLeaderMail(e.target.value)
+                            }} />
+                            <Form.Text className="text-muted">
+                                Please enter your SLIIT email.
+                            </Form.Text> 
+                            </Form.Group>
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Contact Number</Form.Label>
-                <Form.Control type="number" placeholder="Enter Contact Number" value = {Leadercontact} onChange = {(e)=>{
-                    setLeaderContactNumber(e.target.value)
-                }} />
-                </Form.Group>                
+                            <Form.Group className="mb-3" >
+                            <Form.Label>Contact Number</Form.Label>
+                            <Form.Control type="number" placeholder="Enter Contact Number" value = {Leadercontact} onChange = {(e)=>{
+                                setLeaderContactNumber(e.target.value)
+                            }} />
+                            </Form.Group>                
 
-            </Form>
+                        </Form>
+                </Col> 
+                <Col md = {{offset : 1}}>      
+                        <h2 className = "heading">Member 2 Details</h2>
+                    
+                            <Form>
+                                <Form.Group className="mb-3" >
+                                <Form.Label>Leader ID Number</Form.Label>
+                                <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {S2ID} onChange = {(e) =>{
+                                    setS2IDNumber(e.target.value)
+                                }}/>
 
-            <h2 className = "heading">Member 2 Details</h2>
-      
-            <Form>
-                <Form.Group className="mb-3" >
-                <Form.Label>Leader ID Number</Form.Label>
-                <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {S2ID} onChange = {(e) =>{
-                    setS2IDNumber(e.target.value)
-                }}/>
+                                </Form.Group>
+                        
+                                <Form.Group className="mb-3" >
+                                <Form.Label>NIC</Form.Label>
+                                <Form.Control type="text" placeholder="Enter NIC" value = {S2NIC} onChange = {(e) =>{
+                                    setS2NIC(e.target.value)
+                                }} />
+                                </Form.Group>
 
-                </Form.Group>
-        
-                <Form.Group className="mb-3" >
-                <Form.Label>NIC</Form.Label>
-                <Form.Control type="text" placeholder="Enter NIC" value = {S2NIC} onChange = {(e) =>{
-                    setS2NIC(e.target.value)
-                }} />
-                </Form.Group>
+                                <Form.Group className="mb-3" >
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" placeholder="Enter Email" value = {S2mail} onChange = {(e) =>{
+                                    setS2Mail(e.target.value)
+                                }} />
+                                <Form.Text className="text-muted">
+                                    Please enter your SLIIT email.
+                                </Form.Text> 
+                                </Form.Group>
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter Email" value = {S2mail} onChange = {(e) =>{
-                    setS2Mail(e.target.value)
-                }} />
-                <Form.Text className="text-muted">
-                    Please enter your SLIIT email.
-                </Form.Text> 
-                </Form.Group>
+                                <Form.Group className="mb-3" >
+                                <Form.Label>Contact Number</Form.Label>
+                                <Form.Control type="number" placeholder="Enter Contact Number" value = {S2contact} onChange = {(e)=>{
+                                    setS2ContactNumber(e.target.value)
+                                }} />
+                                </Form.Group>                
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Contact Number</Form.Label>
-                <Form.Control type="number" placeholder="Enter Contact Number" value = {S2contact} onChange = {(e)=>{
-                    setS2ContactNumber(e.target.value)
-                }} />
-                </Form.Group>                
+                            </Form>
+                </Col>
+            </Row>
 
-            </Form>
+            <Row style = {{marginTop : "4rem"}}>
+                <Col>               
 
-            <h2 className = "heading">Member 3 Details</h2>
-            <Form>
-                <Form.Group className="mb-3" >
-                <Form.Label>Leader ID Number</Form.Label>
-                <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {S3ID} onChange = {(e) =>{
-                    setS3IDNumber(e.target.value)
-                }}/>
+                            <h2 className = "heading">Member 3 Details</h2>
+                                <Form>
+                                    <Form.Group className="mb-3" >
+                                    <Form.Label>Leader ID Number</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {S3ID} onChange = {(e) =>{
+                                        setS3IDNumber(e.target.value)
+                                    }}/>
 
-                </Form.Group>
-        
-                <Form.Group className="mb-3" >
-                <Form.Label>NIC</Form.Label>
-                <Form.Control type="text" placeholder="Enter NIC" value = {S3NIC} onChange = {(e) =>{
-                    setS3NIC(e.target.value)
-                }} />
-                </Form.Group>
+                                    </Form.Group>
+                            
+                                    <Form.Group className="mb-3" >
+                                    <Form.Label>NIC</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter NIC" value = {S3NIC} onChange = {(e) =>{
+                                        setS3NIC(e.target.value)
+                                    }} />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter Email" value = {S3mail} onChange = {(e) =>{
-                    setS3Mail(e.target.value)
-                }} />
-                <Form.Text className="text-muted">
-                    Please enter your SLIIT email.
-                </Form.Text> 
-                </Form.Group>
+                                    <Form.Group className="mb-3" >
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter Email" value = {S3mail} onChange = {(e) =>{
+                                        setS3Mail(e.target.value)
+                                    }} />
+                                    <Form.Text className="text-muted">
+                                        Please enter your SLIIT email.
+                                    </Form.Text> 
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" >
-                <Form.Label>Contact Number</Form.Label>
-                <Form.Control type="number" placeholder="Enter Contact Number" value = {S3contact} onChange = {(e)=>{
-                    setS3ContactNumber(e.target.value)
-                }} />
-                </Form.Group>                
+                                    <Form.Group className="mb-3" >
+                                    <Form.Label>Contact Number</Form.Label>
+                                    <Form.Control type="number" placeholder="Enter Contact Number" value = {S3contact} onChange = {(e)=>{
+                                        setS3ContactNumber(e.target.value)
+                                    }} />
+                                    </Form.Group>                
 
-            </Form>
-
+                                </Form>
+                </Col>
+                <Col md = {{offset : 1}}>  
             <h2 className = "heading">Member 4 Details</h2>
             <Form>
                 <Form.Group className="mb-3" >
@@ -190,14 +207,17 @@ function GroupReg(){
                 </Form.Group>                
  
 
-                <Button variant="primary" type="submit" onClick = {(e) =>{
+
+            </Form>
+            </Col>
+        </Row>    
+        </div>
+        </Container>
+        <Button variant="primary" type="submit" style = {{width : "100%" , marginBottom : "2rem"}} onClick = {(e) =>{
                     submitClick(e);
                 }}  >
                 Submit
-                </Button> 
-            </Form>
-        </div>
-        </Container>
+        </Button> 
         </>
     )
 }
