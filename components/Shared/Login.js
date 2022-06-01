@@ -31,16 +31,9 @@ function LoginStudent() {
 
   const navigate = useNavigate();
 
-  let userType;
+  let userType = 1;
 
-  // useEffect(() => {
-  //   ReactSession.setStoreType("memory");
-  //   userType = ReactSession.get("loginType");
-  //   console.log(userType);
-  //   if (userType === null || userType === undefined) {
-  //     navigate("/loginType");
-  //   }
-  // });
+
 
   function onClickSignIn(e) {
     console.log(userType);
@@ -52,11 +45,12 @@ function LoginStudent() {
           if (res.data === true) {
 
             axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
-              if (password !== r.data[0].Password) {
-                console.log(r.data[0].Password);
+              if (password !== r.data[0].password) {
+                console.log(r.data[0].password);
                 alert("Check Password!");
               } else {
                 ReactSession.set("loginData", r.data[0]);
+                navigate("/student-home")
               }
             }).catch((err) => console.log(err));
           }
@@ -70,12 +64,12 @@ function LoginStudent() {
 
     } 
     else {
-
+       
     }   
   }
   return (
     <>
-      <Box
+      {/* <Box
         position="absolute"
         top={0}
         left={0}
@@ -92,7 +86,7 @@ function LoginStudent() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      />
+      /> */}
       <Box px={1} width="100%" height="100vh" mx="auto" position="relative" zIndex={2}>
         <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
