@@ -25,7 +25,7 @@ function LoginType() {
   const supervisorClick = () => {
     loginType = 2;
     ReactSession.set("loginType", loginType);
-    navigate("/login");
+    navigate("/staff-login");
   };
   const StudentClick = () => {
     loginType = 1;

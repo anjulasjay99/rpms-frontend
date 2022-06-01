@@ -16,6 +16,7 @@ function SubmitTopicDetails(){
     const navigate = useNavigate();
     const [selectedFile , setSelectedFile] = useState("");
     const [fileId , setId] = useState("");
+    const [doc , setDoc] = useState("");
     const location = useLocation();
     const GroupId = "RSH1";
     console.log(location.state.name);
@@ -62,7 +63,7 @@ function SubmitTopicDetails(){
         
 
         
-      
+        
         
         const formData = new FormData();
 
@@ -75,9 +76,10 @@ function SubmitTopicDetails(){
         axios.post(`http://localhost:8070/submissions/submitDoc` , formData).then((res) =>{
             console.log(res.data.document);
             setDoc(res.data.document);
-            
+
             console.log(doc);
 
+        
         })
         .catch((err) =>{
             console.log(err);
@@ -86,10 +88,9 @@ function SubmitTopicDetails(){
         const documentData = {
             GroupId,
             submissionType : name,
-            document : "Report.docx",
-           
+            document : "Report.docx"
+
         };
-        console.log(documentData)
         axios.post(`http://localhost:8070/submissions/add/` , documentData).then((res) =>{
             console.log(res);
         }).then((res) =>{
