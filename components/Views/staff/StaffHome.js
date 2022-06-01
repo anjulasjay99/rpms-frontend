@@ -12,6 +12,7 @@ import {  Row, Col } from "reactstrap";
 import { GiConfirmed } from "react-icons/gi";
 import { HiDocumentText,HiOutlineDocumentText } from "react-icons/hi";
 import "../css/staffHome.css";
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 function StaffHome() {
 
@@ -32,10 +33,13 @@ function StaffHome() {
   return (
     
     <>
+      <SupervisorHeader/>
         <center>
         <br/>
         <Grid py={2} mx={3}>
-        <Typography variant="h2" ml={2}>
+        <Typography variant="h2" ml={2} sx = {{
+                    fontWeight : "bold"
+                }}>
             Staff Home
           </Typography>
         </Grid>
@@ -76,14 +80,7 @@ function StaffHome() {
                   </div>
                 </div>
 
-                <div className="home-card-div" onClick={() => EvaluateProjectProposalsClick()}>
-                  <div>
-                    <HiOutlineDocumentText className="home-card-icon" />
-                  </div>
-                  <div>
-                    <h4>Evaluate Proposal Document</h4>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </Col>

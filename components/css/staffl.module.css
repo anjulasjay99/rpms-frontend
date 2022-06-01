@@ -25,6 +25,11 @@
 
 .header{
     font-size: 40px;
-    color: rgb(244, 237, 237);
-    font-weight: 500;
+    color: rgb(12, 11, 11);
+    font-weight: 400;
+    margin-top: 0%;
+}
+
+.btn-primary{
+    width: 400px;
 }

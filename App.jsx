@@ -21,6 +21,7 @@ import LoginType from "./components/Shared/LoginType";
 import StaffLogin from "./components/Shared/StaffLogin";
 
 
+
 export default function App() {
   return(
     <div>
@@ -42,7 +43,7 @@ export default function App() {
        <Route path="/staff-login" element = {<StaffLogin/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
-       <Route path="/logintype" element = {<LoginType/>} /> 
+       <Route path="/logintype" element = {<LoginType/>} />  
       </Routes>
       </BrowserRouter>
     </div>

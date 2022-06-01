@@ -48,10 +48,10 @@ const StaffLogin = () => {
   }
   return (
     <div><div style = {{paddingTop : "50px"}} className = {styles.body}>
-    <br/><br/><h3 className = {styles.header} style = {{textAlign : 'center'}}>Staff Login</h3><br/><br/>
+    <br/><br/> <br/><br/><br/>
     <div className = {styles.FormContainer}>
     <form >
-
+    <h3 className = {styles.header} style = {{textAlign : 'center'}}>Staff Login</h3>
         <Label for = "Username">Username</Label><br/>
         <Input type = 'text' name = "username" placeholder = "Enter Username" required 
         onChange = {(e) =>{
@@ -66,7 +66,14 @@ const StaffLogin = () => {
         }}
         ></Input><br/>
 
-        <Button onClick={(event) => {  loginClick(event);}} color = "primary" type = "submit" style = {{float:'right' , margin : "5px" }}>Login</Button>
+        <Button  onClick={(event) => {  loginClick(event);}} color = "primary" type = "submit" style = {{float:'right' , width : "120px" }}>Login</Button>
+        <br/><br/>
+        <label>
+                Don't have an account?{" "}
+                <a href="/register-staff">
+                  <strong>Create an account</strong>
+                </a>
+        </label>
     </form>    
     </div>
 </div>   </div>
