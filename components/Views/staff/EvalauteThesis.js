@@ -13,7 +13,8 @@ const EvalauteThesis = () => {
   const [markingSchemes, setmarkingSchemes] = useState([]);
   const [GroupId, setGroupId] = useState("");
   const [doc, setdoc] = useState("");
-  const [marks,setmarks] = useState(null); 
+  const [marks,setmarks] = useState(null);
+  const [docfileId,setdocfileId] = useState(""); 
   const [submissionDate, setsubmissionDate] = useState("");
   const [submissionType, setsubmissionType] = useState("");
   const [staff, setstaff] = useState([]);
@@ -45,9 +46,9 @@ const EvalauteThesis = () => {
 
 
  //download student submissions
-  const openDoc = (id) => {
+  const openDoc = (docfileId) => {
     fetch(
-      `http://localhost:8070/submissions/files/download/${id}`
+      `http://localhost:8070/submissions/files/download/${docfileId}`
     )
       .then((response) => response.blob())
       .then((blob) => {
@@ -90,6 +91,7 @@ const EvalauteThesis = () => {
         setdoc(res.data.document);
         setsubmissionDate(res.data.submissionDate);
         setsubmissionType(res.data.submissionType)
+        setdocfileId(res.data.docfileId)
         console.log(doc)
         if(res.data.marks !=0){
         setmarks(res.data.marks)
@@ -128,6 +130,7 @@ const EvalauteThesis = () => {
       submissionType,
       marks,
       doc,
+      docfileId
     };
     console.log(newupdateddata)
     axios
@@ -243,7 +246,7 @@ const EvalauteThesis = () => {
                <br></br>
                <br></br>
                <Row>
-                 <Col>Ducument : <a href="#" onClick={() => openDoc(id)}>{doc} </a></Col>
+                 <Col>Ducument : <a href="#" onClick={() => openDoc(docfileId)}>{doc} </a></Col>
                </Row>
                <br></br>
                <br></br>

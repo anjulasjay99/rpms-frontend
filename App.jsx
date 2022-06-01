@@ -19,6 +19,7 @@ import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
 
 
 import LoginType from "./components/Shared/LoginType";
+import StaffLogin from "./components/Shared/StaffLogin";
 
 
 export default function App() {
@@ -39,7 +40,7 @@ export default function App() {
       <Route path="/select-Cosupervisor" element = {<CoSupervisorSelect/>} />
        <Route path="/student-home" element = {<StudentHome/>} /> 
        <Route path="/student-login" element = {<LoginStudent/>} /> 
-
+       <Route path="/staff-login" element = {<StaffLogin/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
        <Route path="/logintype" element = {<LoginType/>} /> 
