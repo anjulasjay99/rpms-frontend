@@ -2,6 +2,7 @@ import React , {useState , useEffect} from 'react';
 import axios from 'axios'
 import { Container , Form , Button , Row , Col} from 'react-bootstrap';
 import { Typography , Grid } from '@mui/material';
+import StudentHeader from "../../Shared/Header-student";
 
 function GroupReg(){
 
@@ -37,6 +38,7 @@ function GroupReg(){
         }
         axios.post("http://localhost:8070/groups/add" , newGroup).then((res) =>{
             console.log(res);
+            alert("Group Added!");
             //Add Toast
         }).catch((e) =>{
             console.log(e);
@@ -45,6 +47,7 @@ function GroupReg(){
         
     return(
         <>
+        <StudentHeader/>
         <Container>
         <Grid py={4}>
                 <Typography variant="h3"  sx = {{

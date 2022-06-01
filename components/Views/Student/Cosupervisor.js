@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import { FaUserTie } from "react-icons/fa";
 import { RecentActorsOutlined } from "@mui/icons-material";
 import { Dropdown , DropdownButton } from "react-bootstrap";
+import StudentHeader from "../../Shared/Header-student";
 
 function CoSupervisorSelect() {
 
@@ -42,6 +43,7 @@ function CoSupervisorSelect() {
 
     return(
         <>
+        <StudentHeader/>
         <Container>
         <div className='TopicTitleSection'>
         <Form>
