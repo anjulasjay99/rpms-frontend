@@ -3,6 +3,7 @@ import { getAccordionDetailsUtilityClass } from '@mui/material';
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import '../../css/topicacception.css'
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 const Topicacception = () => {
 
@@ -91,7 +92,9 @@ const Topicacception = () => {
   }
 
   return (
-    <div><br/>  
+    <div>
+    <SupervisorHeader/>
+    <br/>  
     <h1 className="text-center font-weight-bold text-primary">Accept Topics</h1>
     <br/><br/><br/>
     <div className='container'>
