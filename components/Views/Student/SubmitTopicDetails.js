@@ -18,28 +18,36 @@ function SubmitTopicDetails(){
     const [fileId , setId] = useState("");
     const [doc , setDoc] = useState("");
     const location = useLocation();
-    const GroupId = "RSH1";
+    const GroupId = "RSH_GRP-1";
     console.log(location.state.name);
     var name = location.state.name;
+    var template = name.replace("Submission" , "Template");
+    var c;
+
+    console.log(template);
     function onFileChange(event) {
         setSelectedFile(event.target.files[0]);
     }
 
-    function downloadClick(n){
-        n = "Presentation"
-        axios.get(`http://localhost:8070/templates/getbyName/${n}`).then((res) =>{
+    function downloadClick(){
+        
+        axios.get(`http://localhost:8070/templates/getbyName/${template}`).then((res) =>{
             console.log(res);
-            console.log(n);
+            console.log(template);
+            console.log(res.data[0].fileId);
+            var fileid = res.data[0].fileId;
+            var downDoc = res.data[0].document
+            console.log(downDoc);
 
-             setId(res.data[0].fileId)
-
-             fetch(`http://localhost:8070/templates/files/download/${fileId}`).then((res) => res.blob()).then((blob) =>{
+             fetch(`http://localhost:8070/templates/files/download/${fileid}`).then((res) => res.blob()).then((blob) =>{
                 const link = document.createElement("a");
                 link.href = URL.createObjectURL(blob);
-                link.setAttribute("download", name);
+                link.setAttribute("download", downDoc);
                 link.setAttribute("target", "_blank");
                 document.body.appendChild(link);
                 link.click();
+             }).catch((err) =>{
+                 console.log(err);
              })
 
             //  axios.get(`http://localhost:8070/templates/files/download/${fileId}`).then((res) =>{
@@ -75,9 +83,9 @@ function SubmitTopicDetails(){
 
         await axios.post(`http://localhost:8070/submissions/submitDoc` , formData).then((res) =>{
             console.log(res.data.document);
-            setDoc(res.data.document);
+            c = res.data.document
             docfileId = res.data.fileId
-            console.log(doc);
+            console.log(c);
 
         
         })
@@ -88,11 +96,13 @@ function SubmitTopicDetails(){
         const documentData = {
             GroupId,
             submissionType : name,
-            document : "Report",
+            document : c ,
             docfileId
         };
         axios.post(`http://localhost:8070/submissions/add/` , documentData).then((res) =>{
             console.log(res);
+          //  console.log("Success !");
+            console.log(documentData);
         }).then((res) =>{
             console.log("Success !");
         }).catch((err) =>{
@@ -126,7 +136,7 @@ function SubmitTopicDetails(){
                     <div  >
                     <h2 style={{marginTop : "4rem"}}>Download document template</h2> <br />
                     <Button variant="primary" size="lg" onClick = {() =>{
-                        downloadClick(name);
+                        downloadClick();
                     }}>
                         Download<FaFileDownload></FaFileDownload>
                     </Button>
