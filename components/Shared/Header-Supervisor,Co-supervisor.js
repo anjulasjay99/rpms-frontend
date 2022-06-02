@@ -8,7 +8,7 @@ function SupervisorHeader(){
         
             <Navbar sticky = "top" bg="primary" expand="lg" variant = "dark">
                 <Container fluid>
-                    <LinkContainer to="/logintype">
+                    <LinkContainer to="/">
                     <Navbar.Brand >Research Project Management</Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="navbarScroll" />

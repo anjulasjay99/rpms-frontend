@@ -40,7 +40,9 @@ function LoginType() {
         <center>
         <br/>
         <Grid py={2} mx={3}>
-        <Typography variant="h2" ml={2}>
+        <Typography variant="h2" ml={2} sx = {{
+                    fontWeight : "bold"
+                }}>
             Login
           </Typography>
         </Grid>

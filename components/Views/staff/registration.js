@@ -1,5 +1,8 @@
 import { React, useState } from "react";
 import axios from "axios";
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import { useNavigate, Link } from "react-router-dom";
+
 const Registration = () => {
 
     const [firstName, setfirstName] = useState("");
@@ -10,6 +13,8 @@ const Registration = () => {
     const [staffId,setstaffId ] = useState("");
     const [field, setfield] = useState("Machine Learning");
     const [role, setrole] = useState("staff");
+
+    const navigate = useNavigate();
 
     function Register(e){
         e.preventDefault();
@@ -27,7 +32,6 @@ const Registration = () => {
       .post("http://localhost:8070/staff/save", newUser)
       .then((res) => {
         console.log(res.data)  
-        alert("User Registered");
         setfirstName("");
         setlastName("");
         setsliitEmail("");
@@ -39,6 +43,8 @@ const Registration = () => {
       .catch((err) => {
         alert(err);
       });
+      alert("Staff Registered");
+      navigate("/");
     }
 
   return (

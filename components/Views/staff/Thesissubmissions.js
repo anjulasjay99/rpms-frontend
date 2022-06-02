@@ -41,7 +41,7 @@ const Evaluatedocument = () => {
           <td>{data.GroupId}</td>
           <td>{data.document}</td>
           <td>{new Date(data.submissionDate).toLocaleString()}</td>
-          <td>{data.marks == 0 ? "notmarked" : data.marks} </td>
+          <td>{data.marks == 0 ? "Not Marked" : data.marks} </td>
           <td>   
           <button onClick={
             ()=>{
