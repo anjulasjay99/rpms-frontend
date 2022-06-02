@@ -40,7 +40,6 @@ const EvaluateTopicDetails = () => {
           <td>{data.document}</td>
           <td>{new Date(data.submissionDate).toLocaleString()}</td>
           <td>{data.status}</td>
-          {/* <td>{data.marks == 0 ? "notmarked" : data.marks} </td> */}
           <td>   
           <button onClick={
             ()=>{

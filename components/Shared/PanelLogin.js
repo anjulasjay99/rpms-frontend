@@ -17,12 +17,12 @@ const PanelLogin = () => {
   const [password , setPassword] = useState();
   const navigate = useNavigate();
 
-  let userType = 3;
+  let userType = 2;
   
   function loginClick(e) {
     console.log(userType);
     e.preventDefault();
-    if (userType === 3) {
+    if (userType === 2) {
       axios
         .get(`http://localhost:8070/staff/checkUsername/${username}`)
         .then((res) => {
@@ -53,14 +53,14 @@ const PanelLogin = () => {
     <form >
 
         <Label for = "Username">Username</Label><br/>
-        <Input type = 'text' name = "username" placeholder = "Enter Username" required 
+        <Input type = 'text' name = "username" placeholder = "Enter Username" autoComplete='off' required 
         onChange = {(e) =>{
             setUsername(e.target.value);
         }}
         ></Input><br/>
 
         <Label for = "Password">Password</Label><br/>
-        <Input type = 'text' name = "password" placeholder = "Enter Password" required
+        <Input type = 'password' name = "password" placeholder = "Enter Password" autoComplete='off' required
         onChange = {(e) =>{
             setPassword(e.target.value);
         }}

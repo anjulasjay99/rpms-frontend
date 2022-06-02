@@ -145,9 +145,6 @@ const EvalautePresentation = () => {
     <div> 
     <Container>
     <h2>Download Marking Schema</h2>
-    {/* <Input type="select" name="select" id="exampleSelect" value={doc} onChange = {(e) =>{
-                    setdoc(e.target.value);
-                  }}   >     */}
     {markingSchemes.map((schema)=>{
     return(
      <li> <a href="#" onClick={() => openFile(schema)}>
