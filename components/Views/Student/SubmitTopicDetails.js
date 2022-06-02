@@ -59,11 +59,11 @@ function SubmitTopicDetails(){
         })
     }
 
-    function onSubmitClick(){
+    onSubmitClick = async ()=>{
         
 
         
-        
+        let docfileId = "" ;
         
         const formData = new FormData();
 
@@ -73,10 +73,10 @@ function SubmitTopicDetails(){
           //  selectedFile.name
         );
 
-        axios.post(`http://localhost:8070/submissions/submitDoc` , formData).then((res) =>{
+        await axios.post(`http://localhost:8070/submissions/submitDoc` , formData).then((res) =>{
             console.log(res.data.document);
             setDoc(res.data.document);
-
+            docfileId = res.data.fileId
             console.log(doc);
 
         
@@ -88,8 +88,8 @@ function SubmitTopicDetails(){
         const documentData = {
             GroupId,
             submissionType : name,
-            document : "Report.docx"
-
+            document : "Report",
+            docfileId
         };
         axios.post(`http://localhost:8070/submissions/add/` , documentData).then((res) =>{
             console.log(res);
