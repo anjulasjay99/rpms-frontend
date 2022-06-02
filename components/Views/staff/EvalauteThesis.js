@@ -94,6 +94,7 @@ const EvalauteThesis = () => {
         setsubmissionType(res.data.submissionType)
         setdocfileId(res.data.docfileId)
         console.log(doc)
+        console.log(docfileId)
         if(res.data.marks !=0){
         setmarks(res.data.marks)
         }
