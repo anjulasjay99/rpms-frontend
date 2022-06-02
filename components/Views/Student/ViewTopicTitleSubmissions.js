@@ -9,9 +9,10 @@ function ViewSubstopic(){
 
     const navigate = useNavigate();
     const [topics , setTopics] = useState([]);
-    const [pSubs , setSubs] = useState([]);
+    const [pSubs1 , setSubs1] = useState([]);
+    const [pSubs2 , setSubs2] = useState([]);
     const id = "RSH1"
-    let t = "Topic Details Document"
+    let t = "Thesis Submission"
     useEffect(()=>{
         axios.get(`http://localhost:8070/topicReg/getByGroup/${id}`).then((res) =>{
             console.log(res);
@@ -20,13 +21,22 @@ function ViewSubstopic(){
             console.log(err);
         });
 
-        axios.get(`http://localhost:8070/submissions/getsubmissionByGroup/${id}`).then((res) =>{
+        // Get Topic Detail Submissions
+        axios.get(`http://localhost:8070/submissions/getTDsubmissionByGroup/${id}`).then((res) =>{
             console.log(res);
-            setSubs(res.data);
+            setSubs1(res.data);
         }).catch((err) => {
             console.log(err);
         })
+        getOsubmissionByGroup
 
+        // Get All Other Submissions
+        axios.get(`http://localhost:8070/submissions/getOsubmissionByGroup/${id}`).then((res) =>{
+            console.log(res);
+            setSubs2(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
     },[])
         return(
             <>
@@ -78,19 +88,13 @@ function ViewSubstopic(){
                         </tr>
                     </thead>
                     <tbody>
-                        {pSubs.filter((val) =>{
-                            if(val.submissionType.toLowerCase().includes(t.toLowerCase())){
-                                return val;
-                            }
-                            else
-                            return val;
-                        }).map((pSub , index) => (
+                        {pSubs1.map((pSub , index) => (
                             <tr>
                             <td>{index + 1}</td>            
                             <td>{pSub.document}</td>
                             <td style = {{textAlign :"center"}}>{pSub.isApproved == "Rejected" ? <Button variant = "danger" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}} >Rejected</Button> : pSub.isApproved == "Accepted" ? <Button variant = "success" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Accepted</Button> : <Button variant = "secondary" size = 'sm' style = {{width : "6rem" ,  height : "2rem" , borderRadius : "2rem"}}  >Pending</Button> }</td>
                             <td>Feedback</td>
-                            <td style = {{textAlign :"center"}}>{pSub.isApproved == "Rejected" ? <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate("/topic")}  >Resubmit New Topic</Button> : <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate('co-supervisor')}  >Continue th Project</Button>}</td>
+                            <td style = {{textAlign :"center"}}>{pSub.isApproved == "Rejected" ? <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate("/topic")}  >Resubmit New Topic</Button> :  pSub.isApproved == "Accepted" ? <Button variant = "warning" style = {{width : "11rem"}} onClick = {() => navigate('co-supervisor')}  >Continue th Project</Button> :  <Button variant = "secondary" style = {{width : "11rem"}} onClick = {() => navigate('co-supervisor')}  >Checking...</Button> }</td>
                             </tr>                            
                         ))}
 
@@ -115,14 +119,7 @@ function ViewSubstopic(){
                         </tr>
                     </thead>
                     <tbody>
-                        {pSubs.filter((val) =>{
-
-                            if(!val.submissionType.toLowerCase().includes(t.toLowerCase())){
-                                return val;
-                            }
-                            else
-                                return val;
-                        }).map((pSub , index) => (
+                        {pSubs2.map((pSub , index) => (
                             <tr>
                             <td>{index + 1}</td>                
                             <td>{pSub.submissionType}</td>
