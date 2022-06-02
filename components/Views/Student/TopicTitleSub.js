@@ -16,7 +16,8 @@ function TopicTitle() {
     const [isSelected , setSelected] = useState(false);
     const [supervisorId , setId] = useState("");
     const [field , setField] = useState("Machine Learning");
-    const grpId = "RSH1";
+    const [selection , setSelection] = useState("Research Field");
+    const grpId = "RSH_GRP-1";
 
     useEffect(()=>{
         axios.get(`http://localhost:8070/staff/getSupervisors`).then((res) =>{
@@ -42,6 +43,15 @@ function TopicTitle() {
         })
     }
 
+    const handleSelect = (e) =>{
+        console.log(e);
+        setField(e);
+        setSelection(e);
+        console.log(field);
+        console.log(selection);
+    }
+
+    
 
     return(
         <>
@@ -65,23 +75,15 @@ function TopicTitle() {
                 </Form.Group>
                 <br />
                 <Form.Group className="mb-3" >
-                 <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onSelect={(e) =>{
-                    setField(e.target.value)
-                }}>
-                Select Field
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                {researchAreas.map((areas) =>(
-                    <li><a className="dropdown-item" href="#">{areas}</a></li>
-                ))}    
-                </ul>
-                </div> 
-                {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </DropdownButton> */}
+            <DropdownButton
+                    title={selection}
+                    id="dropdown-menu-align-right"
+                    onSelect={handleSelect}
+                        >
+                        {researchAreas.map((areas)=>(
+                            <Dropdown.Item  eventKey={areas}>{areas}</Dropdown.Item>
+                        ))}    
+            </DropdownButton>
                 </Form.Group>
 
         </Form>        
