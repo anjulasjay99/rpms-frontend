@@ -43,7 +43,7 @@ export default function App() {
        <Route path="/staff-login" element = {<StaffLogin/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
-       <Route path="/logintype" element = {<LoginType/>} />  
+       <Route path="/" element = {<LoginType/>} exact/>  
       </Routes>
       </BrowserRouter>
     </div>

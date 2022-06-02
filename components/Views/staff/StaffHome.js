@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography  from "@mui/material/Typography";
 import {  Row, Col } from "reactstrap";
-
+import { ReactSession } from "react-client-session";
 // Images
 import { GiConfirmed } from "react-icons/gi";
 import { HiDocumentText,HiOutlineDocumentText } from "react-icons/hi";
@@ -15,6 +15,11 @@ import "../css/staffHome.css";
 import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 function StaffHome() {
+  
+  // let staffId
+  // staffId = ReactSession.get("staffId");
+  // console.log("staff")
+  // console.log(staffId)
 
   const navigate = useNavigate();
   const AcceptTopicClick = () => {
@@ -67,7 +72,7 @@ function StaffHome() {
                     <GiConfirmed className="home-card-icon" />
                   </div>
                   <div>
-                    <h4>Accept Topics</h4>
+                    <h4>Accept Topic Titles</h4>
                   </div>
                 </div>
 
