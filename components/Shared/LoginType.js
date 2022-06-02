@@ -20,7 +20,7 @@ function LoginType() {
   const panaelMemberClick = () => {
     loginType = 3;
     ReactSession.set("loginType", loginType);
-    navigate("/login");
+    navigate("/panel-login");
   };
   const supervisorClick = () => {
     loginType = 2;

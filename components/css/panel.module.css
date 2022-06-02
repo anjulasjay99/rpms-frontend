@@ -1,0 +1,32 @@
+.FormContainer{
+    width: 30%;
+    display: inline-block;
+    margin-left: 550px;
+    padding: 40px;
+    border-style: groove;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f2f2f2;
+    margin-bottom: 80px;
+    opacity: 0.8;
+    
+}
+.form{
+    text-align: left;
+}
+
+.body{
+
+    background-image: url('../Shared/images/panelbgImage.jpg') ;
+    background-size: contain;             
+    background-position: center;
+    background-repeat: no-repeat;       
+    height: 100vh;
+    background-attachment: fixed;   
+}
+
+.header{
+    font-size: 50px;
+    color: rgba(56, 21, 21, 0.984);
+    font-weight: 500;
+}

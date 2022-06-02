@@ -15,10 +15,15 @@ import StudentHome from "./components/Views/Student/StudentHome";
 import LoginStudent from "./components/Shared/Login";
 import StaffHome from "./components/Views/staff/StaffHome";
 import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
+import EvaluateTopicDetails from "./components/Views/staff/panelmember/TopicDetailsSubmissions";
+import EvalautingTopicDetails from "./components/Views/staff/panelmember/EvaluateTopicDetails";
+import PresentationSubmissions from "./components/Views/staff/panelmember/PresentationSubmissions";
+import EvalautePresentation from "./components/Views/staff/panelmember/EvaluatePresentation";
 
 
 import LoginType from "./components/Shared/LoginType";
 import StaffLogin from "./components/Shared/StaffLogin";
+import PanelLogin from "./components/Shared/PanelLogin";
 
 
 export default function App() {
@@ -41,8 +46,13 @@ export default function App() {
        <Route path="/student-login" element = {<LoginStudent/>} /> 
        <Route path="/staff-login" element = {<StaffLogin/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
+       <Route path="/panel-login" element = {<PanelLogin/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
        <Route path="/logintype" element = {<LoginType/>} /> 
+       <Route path="/evaluate-topic-details" element = {<EvaluateTopicDetails/>} exact/>
+       <Route path="/evaluate-topic-details/:id" element = {<EvalautingTopicDetails/>} />
+       <Route path="/evaluate-presentations" element = {<PresentationSubmissions/>} exact/>
+       <Route path="/evaluate-presentations/:id" element = {<EvalautePresentation/>} />
       </Routes>
       </BrowserRouter>
     </div>
