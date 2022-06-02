@@ -7,13 +7,19 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography  from "@mui/material/Typography";
 import {  Row, Col } from "reactstrap";
-
+import { ReactSession } from "react-client-session";
 // Images
 import { GiConfirmed } from "react-icons/gi";
 import { HiDocumentText,HiOutlineDocumentText } from "react-icons/hi";
 import "../css/staffHome.css";
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 function StaffHome() {
+  
+  // let staffId
+  // staffId = ReactSession.get("staffId");
+  // console.log("staff")
+  // console.log(staffId)
 
   const navigate = useNavigate();
   const AcceptTopicClick = () => {
@@ -32,10 +38,13 @@ function StaffHome() {
   return (
     
     <>
+      <SupervisorHeader/>
         <center>
         <br/>
         <Grid py={2} mx={3}>
-        <Typography variant="h2" ml={2}>
+        <Typography variant="h2" ml={2} sx = {{
+                    fontWeight : "bold"
+                }}>
             Staff Home
           </Typography>
         </Grid>
@@ -63,7 +72,7 @@ function StaffHome() {
                     <GiConfirmed className="home-card-icon" />
                   </div>
                   <div>
-                    <h4>Accept Topics</h4>
+                    <h4>Accept Topic Titles</h4>
                   </div>
                 </div>
 
@@ -76,14 +85,7 @@ function StaffHome() {
                   </div>
                 </div>
 
-                <div className="home-card-div" onClick={() => EvaluateProjectProposalsClick()}>
-                  <div>
-                    <HiOutlineDocumentText className="home-card-icon" />
-                  </div>
-                  <div>
-                    <h4>Evaluate Proposal Document</h4>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </Col>

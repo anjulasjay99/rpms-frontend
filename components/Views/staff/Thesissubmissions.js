@@ -1,20 +1,22 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import { useNavigate } from "react-router-dom";
-
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 const Evaluatedocument = () => {
 
   const navigate = useNavigate();
   const [submissions,setsubmissions] = useState([]);
   useEffect(()=>{
-    axios.get(`http://localhost:8070/submissions/get/Thesis`).then((response)=>{
+    axios.get(`http://localhost:8070/submissions/get/Thesis Submission`).then((response)=>{
           
           setsubmissions(response.data)
     })
   },[])
 
   return (
-    <div><br/>  
+    <div>
+    <SupervisorHeader/>  
+    <br/>  
     <h1 className="text-center font-weight-bold text-primary">Evaluate Thesis</h1>
     <br/><br/><br/>
     <div className='container'>
@@ -39,7 +41,7 @@ const Evaluatedocument = () => {
           <td>{data.GroupId}</td>
           <td>{data.document}</td>
           <td>{new Date(data.submissionDate).toLocaleString()}</td>
-          <td>{data.marks == 0 ? "notmarked" : data.marks} </td>
+          <td>{data.marks == 0 ? "Not Marked" : data.marks} </td>
           <td>   
           <button onClick={
             ()=>{

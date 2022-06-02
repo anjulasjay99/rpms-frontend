@@ -1,21 +1,19 @@
-import { ControlCameraSharp } from '@mui/icons-material';
-import { getAccordionDetailsUtilityClass } from '@mui/material';
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
+import { ReactSession } from "react-client-session";
 import '../../css/topicacception.css'
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 const Topicacception = () => {
 
+  let staffId
+  staffId = ReactSession.get("staffId");
+  console.log("staff")
+  console.log(staffId)
 
-  // const [groupId,setgroupId] = useState([]);
-  // const [field,setfield] = useState([]);
-  // const [topic,settopic] = useState([]);
-  // const [description,setdescription] = useState([]);
-  // const [supervisorId,setsupervisorId] = useState([]);
-  // const [isApproved,setisApproved] = useState([]);
   const [submissions,setsubmissions] = useState([]);
   useEffect(()=>{
-    axios.get(`http://localhost:8070/topicsubs/get/sp002`).then((response)=>{
+    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`).then((response)=>{
           
           setsubmissions(response.data)
     })
@@ -23,15 +21,17 @@ const Topicacception = () => {
 
 
   const getData = () => {
-    axios.get(`http://localhost:8070/topicsubs/get/sp002`)
+    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`)
         .then((response) => {
           setsubmissions(response.data)
-          console.log(response.data)
+          //console.log(response.data)
     })
     }
 
   const handleAccept = (data) =>{
   
+   console.log(data)
+   console.log(data.topic)
    let groupId =  data.groupId
    let field =   data.field
    let description = data.description
@@ -62,7 +62,9 @@ const Topicacception = () => {
 
 
   const handleReject = (data) =>{
-  
+
+    console.log(data)
+    console.log(data.topic)
    let groupId =  data.groupId
    let field =   data.field
    let description = data.description
@@ -79,8 +81,8 @@ const Topicacception = () => {
         supervisorId,
         isApproved
     }
-    console.log(newupdata)
-    console.log(data._id) 
+    //console.log(newupdata)
+    //console.log(data._id) 
     axios.put(`http://localhost:8070/topicsubs/update/${data._id}`,newupdata).then((res)=>{
     getData()
     alert("Rejected") 
@@ -91,8 +93,10 @@ const Topicacception = () => {
   }
 
   return (
-    <div><br/>  
-    <h1 className="text-center font-weight-bold text-primary">Accept Topics</h1>
+    <div>
+    <SupervisorHeader/>
+    <br/>  
+    <h1 className="text-center font-weight-bold text-primary">Accept Topic Title</h1>
     <br/><br/><br/>
     <div className='container'>
     <div className='row'>
@@ -116,7 +120,9 @@ const Topicacception = () => {
           <td>{data.topic}</td>
           <td>{data.isApproved}</td>
           <td>   
-          <button onClick={()=>{handleAccept(data)}}type="button" class="btn btn-success">Accept</button>
+          <button onClick={()=>{
+            console.log(data)
+            handleAccept(data)}}type="button" class="btn btn-success">Accept</button>
           <button onClick={()=>{handleReject(data)}}type="button" class="btn btn-danger">Reject</button>
           </td>
         </tr>
