@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Container , Form , Button , Row , Col} from 'react-bootstrap';
 import { Typography , Grid } from '@mui/material';
 import StudentHeader from "../../Shared/Header-student";
+import { ReactSession } from "react-client-session";
 
 function GroupReg(){
 
@@ -26,7 +27,15 @@ function GroupReg(){
     const [S4mail , setS4Mail ] = useState("");
     const [S4contact , setS4ContactNumber ] = useState("");
 
-
+    useEffect(() =>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        console.log(student);
+        setLeaderIDNumber(student.IdNumber);
+        setLeaderNIC(student.nic);
+        setLeaderMail(student.email);
+        setLeaderContactNumber(student.telNo);
+    },[])
     function submitClick(e){
         e.preventDefault();
 
@@ -59,11 +68,11 @@ function GroupReg(){
                     <div className = "formContainer">
                 <Row>
                     <Col>        
-                    <h2 className = "heading">Member 1(Leader) Details</h2>
+                    <h2 className = "heading">Leader Details</h2>
                         <Form>
                             <Form.Group className="mb-3" >
                             <Form.Label>Leader ID Number</Form.Label>
-                            <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {LeaderID} onChange = {(e) =>{
+                            <Form.Control type="text" placeholder="Enter SLIIT ID Number" value = {LeaderID} disabled onChange = {(e) =>{
                                 setLeaderIDNumber(e.target.value)
                             }}/>
 
@@ -71,14 +80,14 @@ function GroupReg(){
                     
                             <Form.Group className="mb-3" >
                             <Form.Label>NIC</Form.Label>
-                            <Form.Control type="text" placeholder="Enter NIC" value = {LeaderNIC} onChange = {(e) =>{
+                            <Form.Control type="text" placeholder="Enter NIC" value = {LeaderNIC} disabled onChange = {(e) =>{
                                 setLeaderNIC(e.target.value)
                             }} />
                             </Form.Group>
 
                             <Form.Group className="mb-3" >
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="Enter Email" value = {Leadermail} onChange = {(e) =>{
+                            <Form.Control type="email" placeholder="Enter Email" value = {Leadermail} disabled onChange = {(e) =>{
                                 setLeaderMail(e.target.value)
                             }} />
                             <Form.Text className="text-muted">
@@ -88,7 +97,7 @@ function GroupReg(){
 
                             <Form.Group className="mb-3" >
                             <Form.Label>Contact Number</Form.Label>
-                            <Form.Control type="number" placeholder="Enter Contact Number" value = {Leadercontact} onChange = {(e)=>{
+                            <Form.Control type="number" placeholder="Enter Contact Number" value = {Leadercontact} disabled onChange = {(e)=>{
                                 setLeaderContactNumber(e.target.value)
                             }} />
                             </Form.Group>                

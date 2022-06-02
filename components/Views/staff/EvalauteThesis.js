@@ -7,6 +7,7 @@ import { Schema, SpatialAudioOffTwoTone } from '@mui/icons-material';
 import ReactDOM from 'react-dom';
 import "../css/evaluatethesis.css"
 import axios from "axios";
+import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 
 const EvalauteThesis = () => {
   const navigate = useNavigate()
@@ -93,6 +94,7 @@ const EvalauteThesis = () => {
         setsubmissionType(res.data.submissionType)
         setdocfileId(res.data.docfileId)
         console.log(doc)
+        console.log(docfileId)
         if(res.data.marks !=0){
         setmarks(res.data.marks)
         }
@@ -164,18 +166,25 @@ const EvalauteThesis = () => {
       });
   }
 
+
+
   return (
     <div> 
+    <SupervisorHeader/>
+    <br/>
     <Container>
     <h2>Download Marking Schema</h2>
+    <br/>
     {/* <Input type="select" name="select" id="exampleSelect" value={doc} onChange = {(e) =>{
                     setdoc(e.target.value);
                   }}   >     */}
     {markingSchemes.map((schema)=>{
     return(
-     <li> <a href="#" onClick={() => openFile(schema)}>
-                            {schema.document}
-                          </a></li> 
+     <ul >
+     <li style={{listStyleType: "circle"}}> <a href="#" onClick={() => openFile(schema)}>
+     {schema.document}
+     </a></li>
+     </ul>                      
     )
     })}  
     <br/>

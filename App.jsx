@@ -26,6 +26,7 @@ import StaffLogin from "./components/Shared/StaffLogin";
 import PanelLogin from "./components/Shared/PanelLogin";
 
 
+
 export default function App() {
   return(
     <div>
@@ -48,11 +49,11 @@ export default function App() {
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/panel-login" element = {<PanelLogin/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
-       <Route path="/logintype" element = {<LoginType/>} /> 
        <Route path="/evaluate-topic-details" element = {<EvaluateTopicDetails/>} exact/>
        <Route path="/evaluate-topic-details/:id" element = {<EvalautingTopicDetails/>} />
        <Route path="/evaluate-presentations" element = {<PresentationSubmissions/>} exact/>
        <Route path="/evaluate-presentations/:id" element = {<EvalautePresentation/>} />
+       <Route path="/" element = {<LoginType/>} exact/>  
       </Routes>
       </BrowserRouter>
     </div>
