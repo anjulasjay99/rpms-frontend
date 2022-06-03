@@ -2,9 +2,9 @@
   "name": "rpms-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html && echo '/* /index.html 200' | cat >dist/_redirects"
   },
   "repository": {
     "type": "git",
