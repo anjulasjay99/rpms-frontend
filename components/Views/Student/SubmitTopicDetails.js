@@ -99,6 +99,8 @@ function SubmitTopicDetails(){
             document : c ,
             docfileId
         };
+
+        console.log(documentData)
         axios.post(`http://localhost:8070/submissions/add/` , documentData).then((res) =>{
             console.log(res);
           //  console.log("Success !");
