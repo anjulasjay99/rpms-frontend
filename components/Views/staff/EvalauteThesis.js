@@ -169,7 +169,7 @@ const EvalauteThesis = () => {
     <div> 
     <SupervisorHeader/>
     <br/>
-    <Container>
+    <div className='container-xl'>
     <h2>Download Marking Schema</h2>
     <br/>
     {/* <Input type="select" name="select" id="exampleSelect" value={doc} onChange = {(e) =>{
@@ -185,8 +185,8 @@ const EvalauteThesis = () => {
     )
     })}  
     <br/>
-    </Container>
-    <Container>
+    </div>
+    <div className='container-md'>
     <Form>
     <h2>Request Reviewer</h2>
     <br/>
@@ -228,12 +228,12 @@ const EvalauteThesis = () => {
     />
     </Col>
   </FormGroup>
-  <button style={{float:"left"}}  className="btn btn-primary btn-lg"  onClick={(e)=>{requestReviewer(e)}}
+  <button style={{width : "10%",float:"left"}}  className="btn btn-primary btn-lg"  onClick={(e)=>{requestReviewer(e)}}
             > Request</button>
   </Form>
-    </Container>
-    
-    <Container>
+    </div>
+    <br/> <br/><br/>
+    <div className='container-md'>
     <div className="evaluate-content"> 
        <h2  align="center">Evaluate {GroupId} Thesis</h2>
        <hr></hr>
@@ -289,23 +289,23 @@ const EvalauteThesis = () => {
            </Card>
          </Col>
        </Row>
-       <br></br>
-       <Container>
+       <br/>
+       <div className='container-md'>
           <div className="reportdownload">
             <Row>
               <Col>
-                <button style={{float:"right"}}  className="btn btn-primary btn-lg"  onClick={(e)=>{submit(e)}}
+                <button  style={{width : "100%"}} className="btn btn-primary btn-lg"  onClick={(e)=>{submit(e)}}
             > Submit</button>
               </Col>
               <Col>
-                    <button className="btn btn-primary btn-lg" onClick={(e)=>{navigate("/evaluate-thesis")}}>View Table</button>
+                    <button  style={{width : "100%"}} className="btn btn-primary btn-lg" onClick={(e)=>{navigate("/evaluate-thesis")}}>View Table</button>
               </Col>
             </Row>
             </div>
-          </Container>
+          </div>
          <br/>
        </div>
-    </Container>
+    </div>
     </div>
   )
 }
