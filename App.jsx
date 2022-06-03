@@ -14,6 +14,7 @@ import CoSupervisorSelect from "./components/Views/Student/Cosupervisor";
 import StudentHome from "./components/Views/Student/StudentHome";
 import LoginStudent from "./components/Shared/Login";
 import StaffHome from "./components/Views/staff/StaffHome";
+import PanelHome from "./components/Views/staff/panelmember/PanelHome";
 import EvalauteThesis from "./components/Views/staff/EvalauteThesis";
 import EvaluateTopicDetails from "./components/Views/staff/panelmember/TopicDetailsSubmissions";
 import EvalautingTopicDetails from "./components/Views/staff/panelmember/EvaluateTopicDetails";
@@ -48,6 +49,7 @@ export default function App() {
        <Route path="/staff-login" element = {<StaffLogin/>} /> 
        <Route path="/staff-home" element = {<StaffHome/>} /> 
        <Route path="/panel-login" element = {<PanelLogin/>} /> 
+       <Route path="/panel-home" element = {<PanelHome/>} /> 
        <Route path="/thesis-evaluate/:id" element = {<EvalauteThesis/>} /> 
        <Route path="/evaluate-topic-details" element = {<EvaluateTopicDetails/>} exact/>
        <Route path="/evaluate-topic-details/:id" element = {<EvalautingTopicDetails/>} />
