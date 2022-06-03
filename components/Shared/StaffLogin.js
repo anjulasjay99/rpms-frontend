@@ -63,7 +63,7 @@ const StaffLogin = () => {
     <br/><br/> <br/><br/><br/>
     <div className = {styles.FormContainer}>
     <form >
-    <h3 className = {styles.header} style = {{textAlign : 'center'}}>Staff Login</h3>
+    <h3 className = {styles.header} style = {{textAlign : 'center'}}>Supervisor/CoSupervisor Login</h3>
         <Label for = "Username">Username</Label><br/>
         <Input type = 'text' name = "username" placeholder = "Enter Username" required 
         onChange = {(e) =>{
@@ -72,7 +72,7 @@ const StaffLogin = () => {
         ></Input><br/>
 
         <Label for = "Password">Password</Label><br/>
-        <Input type = 'text' name = "password" placeholder = "Enter Password" required
+        <Input type = 'passoword' name = "password" placeholder = "Enter Password" required
         onChange = {(e) =>{
             setPassword(e.target.value);
         }}
