@@ -7,12 +7,14 @@ import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 const Topicacception = () => {
 
   let staffId
-  staffId = ReactSession.get("staffId");
+  //staffId = ReactSession.get("staffId");
   console.log("staff")
   console.log(staffId)
   const [submissions,setsubmissions] = useState([]);
+  staffId = sessionStorage.getItem("staffId");
   
   useEffect(()=>{
+    
     console.log(staffId)
     axios.get(`http://localhost:8070/topicsubs/get/${staffId}`).then((response)=>{
           
@@ -22,6 +24,7 @@ const Topicacception = () => {
 
 
   const getData = () => {
+  
     axios.get(`http://localhost:8070/topicsubs/get/${staffId}`)
         .then((response) => {
           setsubmissions(response.data)
