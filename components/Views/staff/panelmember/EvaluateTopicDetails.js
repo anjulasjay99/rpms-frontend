@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from "react-router-dom";
-import { Container, Button } from 'react-bootstrap';
-import { FaFileDownload } from "react-icons/fa";
-import { Row, Col, Card, Container, Button, FormGroup, Label, Input, Form } from "reactstrap";
-import { Schema, SpatialAudioOffTwoTone } from '@mui/icons-material';
-import ReactDOM from 'react-dom';
+import { Container, Button, Input } from "reactstrap";
 import "../../css/evaluatethesis.css"
 import axios from "axios";
+import PanelHeader from "../../../Shared/Header-panel";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 const EvalautingTopicDetails = () => {
   const navigate = useNavigate()
-  const [markingSchemes, setmarkingSchemes] = useState([]);
   const [GroupId, setGroupId] = useState("");
   const [doc, setdoc] = useState("");
   const [marks, setmarks] = useState(null);
@@ -19,12 +22,8 @@ const EvalautingTopicDetails = () => {
   const [docfileId, setdocfileId] = useState("");
   const [submissionDate, setsubmissionDate] = useState("");
   const [submissionType, setsubmissionType] = useState("");
-  const [staff, setstaff] = useState([]);
-  const [Description, setdescription] = useState([]);
 
   const { id } = useParams();
-  const accept = "accepted";
-  const reject = "rejected";
   console.log(id)
 
   let newupdateddata = {
@@ -83,22 +82,11 @@ const EvalautingTopicDetails = () => {
 
   //submit data
   function submit(e) {
-    // setstatus(statusvalue);
     console.log(feedback);
 
     if ((status == "rejected" || status == "accepted") && feedback == null) {
       alert("Please enter the evaluation feedback")
     } else {
-      // const newupdateddata = {
-      //   GroupId,
-      //   submissionDate,
-      //   submissionType,
-      //   marks,
-      //   status,
-      //   feedback,
-      //   doc,
-      //   docfileId
-      // };
       newupdateddata = {
         ...newupdateddata,
         feedback: feedback,
@@ -113,94 +101,74 @@ const EvalautingTopicDetails = () => {
         .catch((err) => {
           console.log(err);
         });
-      alert("Successfully evaluated")
+      alert("Successfully evaluated");
+      navigate("/evaluate-topic-details");
     }
   }
 
 
-
   return (
     <div>
+      <PanelHeader />
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
+        <Paper style={{ padding: 20, backgroundColor: '#B0C4DE' }}>
+          <Grid container style={{ align: 'center', width: 500 }}>
+            <Grid item xs={12}>
+              <h2 align="center">Evaluate {GroupId}'s Topic Details</h2>
+            </Grid>
+            <Grid item xs={12} style={{ marginTop: 20, background: '#B0C4DE' }}>
 
-      <Container>
-        <div className="evaluate-content">
-          <h2 align="center">Evaluate {GroupId}'s Topic Details</h2>
-          <hr></hr>
-          <br></br>
-          <Row>
-            <Col>
-              <Card className="report-card" >
-                <div className="Post" >
-                  <div id="report-cont">
-                    <Row>
-                    </Row>
-                    <br></br>
-                    <Row>
-                      <Col>Group ID : {GroupId} </Col>
-                    </Row>
-                    <br></br>
-                    <br></br>
-                    <Row>
-                      <Col>Document : <a href="#" onClick={() => openDoc(docfileId)}>{doc} </a></Col>
-                    </Row>
-                    <br></br>
-                    <br></br>
-                    <Row>
-                      <Col>Submission Date : {new Date(submissionDate).toLocaleString()}</Col>
-                    </Row>
-                    <br></br>
-                    <br></br>
-                    <FormGroup row>
-                      <Label
-                        for="exampleNumber"
-                        size="lg"
-                        sm={4}
-                      >
-                        Feedback :
-                      </Label>
-                      <Col sm={8}>
-                        <Input
-                          bsSize="lg"
-                          id="exampleText"
-                          name="text"
-                          type="textarea"
-                          value={feedback}
-                          onChange={(e) => {
-                            setfeedback(e.target.value)
-                          }}
-                        />
-                      </Col>
-                    </FormGroup>
-                    <br></br>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-          <br></br>
-          <Container>
-            <div className="reportdownload">
-              <Row>
-                <Col>
-                  <button style={{ float: "right" }} className="btn btn-primary btn-lg" value="accepted" onClick={(e) => {setstatus(e.target.value) }}>
+              <Card style={{ background: '#F5F5F5' }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                    Group ID : {GroupId}
+                  </Typography>
+                  <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                    Document : <a href="#" onClick={() => openDoc(docfileId)}>{doc} </a>
+                  </Typography>
+                  <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                    Submission Date : {new Date(submissionDate).toLocaleString()}
+                  </Typography>
+                  <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+                    Feedback :
+                  </Typography>
+                  <Input
+                    bsSize="lg"
+                    id="exampleText"
+                    name="text"
+                    type="textarea"
+                    style={{ width: 400 }}
+                    value={feedback}
+                    onChange={(e) => {
+                      setfeedback(e.target.value)
+                    }}
+                  />
+
+                </CardContent>
+                <CardActions style={{ textAlign: 'center', justifyContent: 'center' }}>
+
+                  <button style={{ backgroundColor: 'blue', border: 'none' }} className="btn btn-secondary" value="accepted" onClick={(e) => { setstatus(e.target.value) }}>
                     Accept</button>
-                </Col>
-                <button style={{ float: "right" }} className="btn btn-primary btn-lg" onClick={(e) => { setstatus(reject); submit(e); }}>
-                  Reject</button>
-                <Col>
-                  <button className="btn btn-primary btn-lg" onClick={(e) => { navigate("/evaluate-topic-details") }}>
-                    Go back</button>
-                </Col>
-                <Col>
-                  <button className="btn btn-primary btn-lg" onClick={(e) => { submit(e) }}>
-                    Submit</button>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-          <br />
-        </div>
-      </Container>
+
+                  <button style={{ backgroundColor: 'red', border: 'none' }} className="btn btn-secondary" value="rejected" onClick={(e) => { setstatus(e.target.value) }}>
+                    Reject</button>
+
+                </CardActions>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} style={{ marginTop: 20, display: 'inherit', justifyContent: 'space-between' }} >
+
+              <button style={{ backgroundColor: 'black', border: 'none' }} className="btn btn-primary" onClick={(e) => { navigate("/evaluate-topic-details") }}>
+                Go back</button>
+
+              <button style={{ backgroundColor: 'green', border: 'none' }} className="btn btn-primary" onClick={(e) => { submit(e) }}>
+                Submit</button>
+
+            </Grid>
+          </Grid>
+        </Paper>
+      </div>
     </div>
   )
 }
