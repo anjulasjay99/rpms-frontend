@@ -12,7 +12,7 @@ import { ReactSession } from "react-client-session";
 import { GiConfirmed } from "react-icons/gi";
 import { HiDocumentText,HiOutlineDocumentText } from "react-icons/hi";
 import "../css/staffHome.css";
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 
 function StaffHome() {
   

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import { ReactSession } from "react-client-session";
 import '../../css/topicacception.css'
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 
 const Topicacception = () => {
 
@@ -10,10 +10,11 @@ const Topicacception = () => {
   staffId = ReactSession.get("staffId");
   console.log("staff")
   console.log(staffId)
-
   const [submissions,setsubmissions] = useState([]);
+  
   useEffect(()=>{
-    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`).then((response)=>{
+    console.log(staffId)
+    axios.get(`http://localhost:8070/topicsubs/get/${staffId}`).then((response)=>{
           
           setsubmissions(response.data)
     })
@@ -21,7 +22,7 @@ const Topicacception = () => {
 
 
   const getData = () => {
-    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`)
+    axios.get(`http://localhost:8070/topicsubs/get/${staffId}`)
         .then((response) => {
           setsubmissions(response.data)
           //console.log(response.data)
