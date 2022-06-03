@@ -122,7 +122,7 @@ const EvalauteThesis = () => {
     if(marks ==null || marks == 0){
       alert("please enter marks")
     }
-    else if(marks < 0){
+    else if(marks < 0 || marks >100){
       alert("Please enter valid marks")
     }
     else{
