@@ -7,7 +7,7 @@ const Evaluatedocument = () => {
   const navigate = useNavigate();
   const [submissions,setsubmissions] = useState([]);
   useEffect(()=>{
-    axios.get(`http://localhost:8070/submissions/get/Thesis Submission`).then((response)=>{
+    axios.get(`https://rpms-backend.herokuapp.com/submissions/get/Thesis Submission`).then((response)=>{
           
           setsubmissions(response.data)
     })

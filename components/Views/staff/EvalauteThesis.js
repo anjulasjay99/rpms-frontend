@@ -1,10 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { useNavigate, useParams } from "react-router-dom";
 import { Container ,  Button} from 'react-bootstrap';
-import { FaFileDownload } from "react-icons/fa";
 import { Row, Col, Card, Container, Button,FormGroup,Label,Input,Form } from "reactstrap";
-import { Schema, SpatialAudioOffTwoTone } from '@mui/icons-material';
-import ReactDOM from 'react-dom';
 import "../css/evaluatethesis.css"
 import axios from "axios";
 import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
