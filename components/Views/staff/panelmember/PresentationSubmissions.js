@@ -41,7 +41,7 @@ const PresentationSubmissions = () => {
   const navigate = useNavigate();
   const [pptsubmissions, setpptsubmissions] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:8070/submissions/get/Presentation`).then((response) => {
+    axios.get(`https://rpms-backend.herokuapp.com/submissions/get/Presentation`).then((response) => {
 
       setpptsubmissions(response.data)
     })
