@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import { ReactSession } from "react-client-session";
-import '../../css/topicacception.css'
+import '../css/accept-topic-title.css'
 import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 
 const Topicacception = () => {

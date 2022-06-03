@@ -50,7 +50,7 @@ const Registration = () => {
    <div>
    <br/>  
    <h1 className="text-center font-weight-bold text-primary">Staff Registration</h1>
-   <div className="container">
+   <div className="Container">
    <div className='mt-5'>
    <div>
    <form onSubmit={Register} className="row g-4">

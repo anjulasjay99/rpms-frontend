@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from "react-router-dom";
 import { Card, Input } from "reactstrap";
-import "../../css/evaluatethesis.css"
+//import "../../css/evaluatethesis.css"
 import axios from "axios";
 import PanelHeader from "../../../Shared/Header-panel";
 import Card from '@mui/material/Card';
