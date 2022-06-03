@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import axios from "axios";
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 import { useNavigate, Link } from "react-router-dom";
 
 const Registration = () => {
@@ -29,7 +28,7 @@ const Registration = () => {
       role
     };
     axios
-      .post("http://localhost:8070/staff/save", newUser)
+      .post("https://rpms-backend.herokuapp.com/staff/save", newUser)
       .then((res) => {
         console.log(res.data)  
         setfirstName("");

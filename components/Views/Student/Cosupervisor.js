@@ -7,19 +7,27 @@ import { FaUserTie } from "react-icons/fa";
 import { RecentActorsOutlined } from "@mui/icons-material";
 import { Dropdown , DropdownButton } from "react-bootstrap";
 import StudentHeader from "../../Shared/Header-student";
-
+import { useLocation } from "react-router-dom";
+import { ReactSession } from "react-client-session";
 function CoSupervisorSelect() {
 
-    const researchAreas = ["Machine Learning" , "Deep Learning" , "Parallel Computing" , "Artificial Intelligence" , "Robotics"];
-    const [title , seTitle] = useState("");
+    const location = useLocation();
+    const [title , seTitle] = useState(location.state.t);
     const [coSupervisors , setCosupervisors] = useState([]);
     const [isSelected , setSelected] = useState(false);
     const [CosupervisorId , setId] = useState("");
-    const [field , setField] = useState("Machine Learning");
-    const grpId = "RSH1";
+    const [field , setField] = useState(location.state.f);
+
+  //  const grpId = "RSH_GRP-3";
 
     useEffect(()=>{
-        axios.get(`http://localhost:8070/staff/getcoSupervisors`).then((res) =>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        grpId = student.GroupId;
+        axios.get(`https://rpms-backend.herokuapp.com/staff/getcoSupervisors`).then((res) =>{
             console.log(res.data);
             setCosupervisors(res.data);
         }).catch((err) =>{
@@ -33,7 +41,7 @@ function CoSupervisorSelect() {
         const coSupervisor = {
             CosupervisorId
         }
-        axios.put(`http://localhost:8070/topicReg/coSupervisor/${grpId}` , coSupervisor).then((res) =>{
+        axios.put(`https://rpms-backend.herokuapp.com/topicReg/coSupervisor/${grpId}` , coSupervisor).then((res) =>{
             console.log(res);
         }).catch((err) =>{
             console.log(err);
@@ -64,15 +72,15 @@ function CoSupervisorSelect() {
         <Card style={{ width: '18rem' , borderRadius:'1.5rem' }}>
         <Card.Img variant="top"  />
         <Card.Body>
-            <Card.Title>{coSupervisor.fullName}</Card.Title>
+            <Card.Title>{coSupervisor.firstName}  {coSupervisor.lastName}</Card.Title>
             <Card.Text>
                 <b>Research Area : </b> {coSupervisor.field}
                 <br/>
-                <b>Email : </b>{coSupervisor.Sliitemail}
+                <b>Email : </b>{coSupervisor.sliitEmail}
                 <br/>
                 {/* Enter other info */}
             </Card.Text>
-            {isSelected ?  <Button variant="contained" color="success" onClick = {() =>{
+            {isSelected &&  CosupervisorId == coSupervisor.staffId ?  <Button variant="contained" color="success" onClick = {() =>{
                 setSelected(false);
                 setId("");
             }}>

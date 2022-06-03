@@ -8,11 +8,25 @@ import "../css/homeCards.css";
 import { Row , Col } from "react-bootstrap";
 import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
 import StudentHeader from "../../Shared/Header-student";
+import { ReactSession } from "react-client-session";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { MdTopic } from "react-icons/md";
+import { CgFileDocument } from "react-icons/cg";
 
 function StudentHome(){
-
+    var grpId;
     const navigate = useNavigate();
-
+    useEffect(() =>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        else if(student.isGrouped == false){
+            navigate('/register-group');
+        }
+        grpId = student.GroupId;
+    },[]);
     return(
         <>
         <StudentHeader/>
@@ -30,7 +44,7 @@ function StudentHome(){
             </Container>
             <Container>
                 <Row>
-                <Col>
+                <Col aria-hidden>
 
                         
                     <div className="home-card-div" onClick={(() =>{
@@ -38,7 +52,7 @@ function StudentHome(){
                             
                         })}>
                             <div>
-                            <BsFillFileEarmarkArrowUpFill className="home-card-icon" />
+                            <AiOutlineUsergroupAdd className="home-card-icon" />
                             </div>
                             <div>
                             <h4>Group Registration</h4>
@@ -48,11 +62,11 @@ function StudentHome(){
                 <Col>
                     <div className="home-card-div" onClick={(() =>{
                         
-                        navigate('/topic');
+                        navigate('/topic' , {state : grpId});
                             
                         })}>
                             <div>
-                            <BsFillFileEarmarkArrowUpFill className="home-card-icon" />
+                            <CgFileDocument className="home-card-icon" />
                             </div>
                             <div>
                             <h4>Topic Submission</h4>
@@ -63,7 +77,7 @@ function StudentHome(){
                 <Row>
                     <Col>
                         <div className="home-card-div" onClick={(() =>{
-                                navigate('/submissionTypes');
+                                navigate('/submissionTypes' , {state : grpId});
                                 
                             })}>
                         <div>
@@ -76,11 +90,11 @@ function StudentHome(){
                     </Col>
                     <Col>
                     <div className="home-card-div" onClick={(() =>{
-                            navigate('/ViewSubmissions');
+                            navigate('/ViewSubmissions' , {state : grpId});
                             
                         })}>
                     <div>
-                        <BsFillFileEarmarkArrowUpFill className="home-card-icon" />
+                        <MdTopic className="home-card-icon" />
                     </div>
                     <div>
                         <h4>Your Submissions</h4>

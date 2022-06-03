@@ -2,18 +2,21 @@ import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import { ReactSession } from "react-client-session";
 import '../../css/topicacception.css'
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 
 const Topicacception = () => {
 
   let staffId
-  staffId = ReactSession.get("staffId");
+  //staffId = ReactSession.get("staffId");
   console.log("staff")
   console.log(staffId)
-
   const [submissions,setsubmissions] = useState([]);
+  staffId = sessionStorage.getItem("staffId");
+  
   useEffect(()=>{
-    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`).then((response)=>{
+    
+    console.log(staffId)
+    axios.get(`https://rpms-backend.herokuapp.com/topicsubs/get/${staffId}`).then((response)=>{
           
           setsubmissions(response.data)
     })
@@ -21,7 +24,8 @@ const Topicacception = () => {
 
 
   const getData = () => {
-    axios.get(`http://localhost:8070/topicsubs/get/ST19967080`)
+  
+    axios.get(`https://rpms-backend.herokuapp.com/topicsubs/get/${staffId}`)
         .then((response) => {
           setsubmissions(response.data)
           //console.log(response.data)
@@ -49,7 +53,7 @@ const Topicacception = () => {
         isApproved
     }
     
-    axios.put(`http://localhost:8070/topicsubs/update/${data._id}`,newupdata).then((res)=>{
+    axios.put(`https://rpms-backend.herokuapp.com/topicsubs/update/${data._id}`,newupdata).then((res)=>{
     
     getData()
     alert("Accepted") 
@@ -83,7 +87,7 @@ const Topicacception = () => {
     }
     //console.log(newupdata)
     //console.log(data._id) 
-    axios.put(`http://localhost:8070/topicsubs/update/${data._id}`,newupdata).then((res)=>{
+    axios.put(`https://rpms-backend.herokuapp.com/topicsubs/update/${data._id}`,newupdata).then((res)=>{
     getData()
     alert("Rejected") 
     }).catch((err) => {

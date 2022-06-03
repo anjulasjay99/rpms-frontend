@@ -43,7 +43,7 @@ function LoginType() {
         <Typography variant="h2" ml={2} sx = {{
                     fontWeight : "bold"
                 }}>
-            Login
+            Logins
           </Typography>
         </Grid>
         </center>

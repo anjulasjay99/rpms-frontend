@@ -17,6 +17,7 @@ const StaffLogin = () => {
   const [password , setPassword] = useState();
   const navigate = useNavigate();
 
+  
   let userType = 2;
   useEffect(() => {
     ReactSession.setStoreType("memory");
@@ -32,11 +33,11 @@ const StaffLogin = () => {
     e.preventDefault();
     if (userType === 2) {
        axios
-        .get(`http://localhost:8070/staff/checkUsername/${username}`)
+        .get(`https://rpms-backend.herokuapp.com/staff/checkUsername/${username}`)
         .then((res) => {
           console.log(res)
           if (res.data === true) {
-            axios.get(`http://localhost:8070/staff/getPass/${username}`).then((r) => {
+            axios.get(`https://rpms-backend.herokuapp.com/staff/getPass/${username}`).then((r) => {
               console.log(r.data)
               if (password !== r.data[0].password) {
                 console.log(r.data[0].password);
@@ -44,7 +45,9 @@ const StaffLogin = () => {
               } else {
                 console.log("staff-login")
                 ReactSession.set("loginData", r.data[0]);
-                ReactSession.set("staffId",r.data[0].staffId)
+                //ReactSession.setStoreType("memory");
+                sessionStorage.setItem("staffId", r.data[0].staffId);
+                //ReactSession.set("staffId",r.data[0].staffId)
                 alert("sucess")
                 navigate("/staff-home")
               }
@@ -63,7 +66,7 @@ const StaffLogin = () => {
     <br/><br/> <br/><br/><br/>
     <div className = {styles.FormContainer}>
     <form >
-    <h3 className = {styles.header} style = {{textAlign : 'center'}}>Staff Login</h3>
+    <h4 className = {styles.header} style = {{textAlign : 'center'}}>Supervisor Login</h4>
         <Label for = "Username">Username</Label><br/>
         <Input type = 'text' name = "username" placeholder = "Enter Username" required 
         onChange = {(e) =>{
@@ -72,7 +75,7 @@ const StaffLogin = () => {
         ></Input><br/>
 
         <Label for = "Password">Password</Label><br/>
-        <Input type = 'text' name = "password" placeholder = "Enter Password" required
+        <Input type = 'password' name = "password" placeholder = "Enter Password" required
         onChange = {(e) =>{
             setPassword(e.target.value);
         }}
