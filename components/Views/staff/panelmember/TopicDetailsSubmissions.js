@@ -39,7 +39,7 @@ const EvaluateTopicDetails = () => {
   const navigate = useNavigate();
   const [topicDetailsubmissions, settopicDetailsubmission] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:8070/submissions/get/TopicDetails`).then((response) => {
+    axios.get(`https://rpms-backend.herokuapp.com/submissions/get/TopicDetails`).then((response) => {
 
       settopicDetailsubmission(response.data)
     })

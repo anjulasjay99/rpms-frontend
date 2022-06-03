@@ -62,7 +62,7 @@ const EvalautePresentation = () => {
   //download student submissions
   const openDoc = (docfileId) => {
     fetch(
-      `http://localhost:8070/submissions/files/download/${docfileId}`
+      `https://rpms-backend.herokuapp.com/submissions/files/download/${docfileId}`
     )
       .then((response) => response.blob())
       .then((blob) => {
@@ -98,7 +98,7 @@ const EvalautePresentation = () => {
   //get submission by ID
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/submissions/getsubmission/${id}`)
+      .get(`https://rpms-backend.herokuapp.com/submissions/getsubmission/${id}`)
       .then((res) => {
         console.log(res.data);
         setGroupId(res.data.GroupId);
@@ -136,7 +136,7 @@ const EvalautePresentation = () => {
       };
       console.log(newupdateddata)
       axios
-        .put(`http://localhost:8070/submissions/update/${id}`, newupdateddata)
+        .put(`https://rpms-backend.herokuapp.com/submissions/update/${id}`, newupdateddata)
         .then((res) => {
           res.json
         })
