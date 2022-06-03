@@ -45,8 +45,9 @@ const StaffLogin = () => {
               } else {
                 console.log("staff-login")
                 ReactSession.set("loginData", r.data[0]);
-                ReactSession.setStoreType("memory");
-                ReactSession.set("staffId",r.data[0].staffId)
+                //ReactSession.setStoreType("memory");
+                sessionStorage.setItem("staffId", r.data[0].staffId);
+                //ReactSession.set("staffId",r.data[0].staffId)
                 alert("sucess")
                 navigate("/staff-home")
               }
