@@ -6,6 +6,8 @@ import StudentHeader from "../../Shared/Header-student";
 import {  Typography , Grid } from "@mui/material";
 import { Row , Col , Container  } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { ReactSession } from "react-client-session";
+import '../../css/reg-student.css'
 //Toasts for every page
 function RegisterStudent() {
 
@@ -39,9 +41,10 @@ function RegisterStudent() {
                 password,
                 telNo
             }
-            axios.post("http://localhost:8070/students/add" , newStudent ).then((res) =>{
+            axios.post("https://rpms-backend.herokuapp.com/students/add" , newStudent ).then((res) =>{
                 console.log(res);
-                alert("Added!");
+                alert("Registration Succesfull!");
+                navigate('/student-login')
 
                 //Toast
             }).catch((e)=>{
@@ -52,28 +55,22 @@ function RegisterStudent() {
             navigate("/login" , {state : type});
         }
 
-
     }
     return(
         <>
         <StudentHeader/>
-            <Container>
-            <Row>
-            <Col md = {7}>
-             {/* Insert Image */}
-            </Col>
-
-            <Col md = {5}>
+         
+        
             
             
-            <Grid py={3}>
+            <Grid py={3} mx = {2}>
                 <Typography variant="h4" sx = {{
                     fontWeight : "bold"
                 }}>
                     Student Registration
                 </Typography>
-                </Grid>
-            <Form>
+            </Grid>
+            <Form style = {{margin : "3rem 3rem"}}>
                 <Form.Group className="mb-3">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control type="text" value = {firstName} placeholder="Enter First Name" onChange = {(e)=>{
@@ -145,9 +142,8 @@ function RegisterStudent() {
                     Register
                 </Button>
             </Form>
-            </Col>  
-            </Row>  
-        </Container>         
+        
+            
         </>
     )
 }

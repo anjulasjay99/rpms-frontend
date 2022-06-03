@@ -2,21 +2,20 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ReactSession } from "react-client-session";
 import { useNavigate, Link } from "react-router-dom";
-
-import Card from "@mui/material/Card";
-import Switch from "@mui/material/Switch";
-import Grid from "@mui/material/Grid";
+import  '../css/studentLogin.css';
 
 
-// import Box from "components/Box";
-// import Typography from "components/Typography";
-// import Input from "components/Input";
-// import Button from "components/Button";
+import{
+  Label,
+  Input,
+  Button
+}
+from 'reactstrap'
+
 
 import  Box  from "@mui/material/Box";
 import Typography  from "@mui/material/Typography";
-import Input from "@mui/material/Input";
-import Button  from "@mui/material/Button";
+
 
 
 // Images
@@ -40,11 +39,11 @@ function LoginStudent() {
     e.preventDefault();
     if (userType === 1) {
       axios
-        .get(`http://localhost:8070/students/checkUsername/${username}`)
+        .get(`https://rpms-backend.herokuapp.com/students/checkUsername/${username}`)
         .then((res) => {
           if (res.data === true) {
 
-            axios.get(`http://localhost:8070/students/getPass/${username}`).then((r) => {
+            axios.get(`https://rpms-backend.herokuapp.com/students/getPass/${username}`).then((r) => {
               if (password !== r.data[0].password) {
                 console.log(r.data[0].password);
                 alert("Check Password!");
@@ -69,24 +68,24 @@ function LoginStudent() {
   }
   return (
     <>
-      {/* <Box
+       {/* <Box
         position="absolute"
         top={0}
         left={0}
         zIndex={1}
         width="100%"
         minHeight="100vh"
-        sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      /> */}
+        // sx={{
+        //   backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+        //     `${linearGradient(
+        //       rgba(gradients.dark.main, 0.6),
+        //       rgba(gradients.dark.state, 0.6)
+        //     )}, url(${bgImage})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundRepeat: "no-repeat",
+        // }}
+      /> 
       <Box px={1} width="100%" height="100vh" mx="auto" position="relative" zIndex={2}>
         <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
@@ -159,8 +158,40 @@ function LoginStudent() {
             </Card>
           </Grid>
         </Grid>
-      </Box>
-    </>
+      </Box> */}
+      <div><div style = {{paddingTop : "50px"}} className = "body">
+    <br/><br/> <br/><br/><br/>
+    <div className = "FormContainer">
+    <form >
+    <h3 className = "header" style = {{textAlign : 'center'}}>Student Login</h3>
+        <Label for = "Username">Username</Label><br/>
+        <Input type = 'text' name = "username" placeholder = "Enter Username" required 
+        onChange = {(e) =>{
+            setUsername(e.target.value);
+        }}
+        ></Input><br/>
+
+        <Label for = "Password">Password</Label><br/>
+        <Input type = 'password' name = "password" placeholder = "Enter Password" required
+        onChange = {(e) =>{
+            setPassword(e.target.value);
+        }}
+        ></Input><br/>
+
+        <Button  onClick={(event) => {  onClickSignIn(event);}} color = "primary" type = "submit" style = {{float:'right' , width : "120px" }}>Login</Button>
+        <br/><br/>
+        <label>
+                Don't have an account?{" "}
+                <a href="/register-student">
+                  <strong>Create an account</strong>
+                </a>
+        </label>
+    </form>    
+    </div>
+  </div>   
+
+ </div>
+</>
   );
 }
 
