@@ -30,7 +30,7 @@ function LoginType() {
   const StudentClick = () => {
     loginType = 1;
     ReactSession.set("loginType", loginType);
-    navigate("/login");
+    navigate("/student-login");
   };
 
   useEffect(() => {}, []);
