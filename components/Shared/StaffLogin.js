@@ -33,11 +33,11 @@ const StaffLogin = () => {
     e.preventDefault();
     if (userType === 2) {
        axios
-        .get(`http://localhost:8070/staff/checkUsername/${username}`)
+        .get(`https://rpms-backend.herokuapp.com/staff/checkUsername/${username}`)
         .then((res) => {
           console.log(res)
           if (res.data === true) {
-            axios.get(`http://localhost:8070/staff/getPass/${username}`).then((r) => {
+            axios.get(`https://rpms-backend.herokuapp.com/staff/getPass/${username}`).then((r) => {
               console.log(r.data)
               if (password !== r.data[0].password) {
                 console.log(r.data[0].password);

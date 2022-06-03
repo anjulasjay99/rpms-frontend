@@ -49,7 +49,7 @@ const EvalauteThesis = () => {
  //download student submissions
   const openDoc = (docfileId) => {
     fetch(
-      `http://localhost:8070/submissions/files/download/${docfileId}`
+      `https://rpms-backend.herokuapp.com/submissions/files/download/${docfileId}`
     )
       .then((response) => response.blob())
       .then((blob) => {
@@ -85,7 +85,7 @@ const EvalauteThesis = () => {
   //get submission by ID
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/submissions/getsubmission/${id}`)
+      .get(`https://rpms-backend.herokuapp.com/submissions/getsubmission/${id}`)
       .then((res) => {
         console.log(res.data);
         setGroupId(res.data.GroupId);
@@ -107,7 +107,7 @@ const EvalauteThesis = () => {
   //fetch staff
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/staff/getAll`)
+      .get(`https://rpms-backend.herokuapp.com/staff/getAll`)
       .then((res) => {
           setstaff(res.data)
       })
@@ -136,7 +136,7 @@ const EvalauteThesis = () => {
     };
     console.log(newupdateddata)
     axios
-      .put(`http://localhost:8070/submissions/update/${id}`, newupdateddata)
+      .put(`https://rpms-backend.herokuapp.com/submissions/update/${id}`, newupdateddata)
       .then((res) => {
           res.json
       })
@@ -156,7 +156,7 @@ const EvalauteThesis = () => {
     }
     console.log(newreview)
     axios
-      .post("http://localhost:8070/reviewer/save", newreview)
+      .post("https://rpms-backend.herokuapp.com/reviewer/save", newreview)
       .then((res) => {
         console.log(res)
         alert("Reviewer Added");

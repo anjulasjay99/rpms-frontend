@@ -16,7 +16,7 @@ const Topicacception = () => {
   useEffect(()=>{
     
     console.log(staffId)
-    axios.get(`http://localhost:8070/topicsubs/get/${staffId}`).then((response)=>{
+    axios.get(`https://rpms-backend.herokuapp.com/topicsubs/get/${staffId}`).then((response)=>{
           
           setsubmissions(response.data)
     })
@@ -25,7 +25,7 @@ const Topicacception = () => {
 
   const getData = () => {
   
-    axios.get(`http://localhost:8070/topicsubs/get/${staffId}`)
+    axios.get(`https://rpms-backend.herokuapp.com/topicsubs/get/${staffId}`)
         .then((response) => {
           setsubmissions(response.data)
           //console.log(response.data)
@@ -53,7 +53,7 @@ const Topicacception = () => {
         isApproved
     }
     
-    axios.put(`http://localhost:8070/topicsubs/update/${data._id}`,newupdata).then((res)=>{
+    axios.put(`https://rpms-backend.herokuapp.com/topicsubs/update/${data._id}`,newupdata).then((res)=>{
     
     getData()
     alert("Accepted") 
@@ -87,7 +87,7 @@ const Topicacception = () => {
     }
     //console.log(newupdata)
     //console.log(data._id) 
-    axios.put(`http://localhost:8070/topicsubs/update/${data._id}`,newupdata).then((res)=>{
+    axios.put(`https://rpms-backend.herokuapp.com/topicsubs/update/${data._id}`,newupdata).then((res)=>{
     getData()
     alert("Rejected") 
     }).catch((err) => {
