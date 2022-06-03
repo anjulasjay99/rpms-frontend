@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import { useNavigate } from "react-router-dom";
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 const Evaluatedocument = () => {
 
   const navigate = useNavigate();

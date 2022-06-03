@@ -17,6 +17,7 @@ const StaffLogin = () => {
   const [password , setPassword] = useState();
   const navigate = useNavigate();
 
+  
   let userType = 2;
   useEffect(() => {
     ReactSession.setStoreType("memory");
@@ -44,6 +45,7 @@ const StaffLogin = () => {
               } else {
                 console.log("staff-login")
                 ReactSession.set("loginData", r.data[0]);
+                ReactSession.setStoreType("memory");
                 ReactSession.set("staffId",r.data[0].staffId)
                 alert("sucess")
                 navigate("/staff-home")
@@ -63,7 +65,7 @@ const StaffLogin = () => {
     <br/><br/> <br/><br/><br/>
     <div className = {styles.FormContainer}>
     <form >
-    <h3 className = {styles.header} style = {{textAlign : 'center'}}>Staff Login</h3>
+    <h4 className = {styles.header} style = {{textAlign : 'center'}}>Supervisor Login</h4>
         <Label for = "Username">Username</Label><br/>
         <Input type = 'text' name = "username" placeholder = "Enter Username" required 
         onChange = {(e) =>{
@@ -72,7 +74,7 @@ const StaffLogin = () => {
         ></Input><br/>
 
         <Label for = "Password">Password</Label><br/>
-        <Input type = 'text' name = "password" placeholder = "Enter Password" required
+        <Input type = 'password' name = "password" placeholder = "Enter Password" required
         onChange = {(e) =>{
             setPassword(e.target.value);
         }}

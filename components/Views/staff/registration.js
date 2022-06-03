@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import axios from "axios";
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
 import { useNavigate, Link } from "react-router-dom";
 
 const Registration = () => {

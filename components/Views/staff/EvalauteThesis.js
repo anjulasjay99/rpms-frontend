@@ -7,7 +7,7 @@ import { Schema, SpatialAudioOffTwoTone } from '@mui/icons-material';
 import ReactDOM from 'react-dom';
 import "../css/evaluatethesis.css"
 import axios from "axios";
-import SupervisorHeader from "../../Shared/Header-Supervisor,Co-supervisor";
+import SupervisorHeader from "../../Shared/Header-Supervisor-Co-supervisor";
 
 const EvalauteThesis = () => {
   const navigate = useNavigate()
