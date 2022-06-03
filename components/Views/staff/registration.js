@@ -28,7 +28,7 @@ const Registration = () => {
       role
     };
     axios
-      .post("http://localhost:8070/staff/save", newUser)
+      .post("https://rpms-backend.herokuapp.com/staff/save", newUser)
       .then((res) => {
         console.log(res.data)  
         setfirstName("");
