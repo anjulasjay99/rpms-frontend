@@ -11,6 +11,7 @@ import { BsFillFileEarmarkArrowUpFill } from "react-icons/bs";
 import { borderColor } from "@mui/system";
 import StudentHeader from "../../Shared/Header-student";
 import { useNavigate } from "react-router-dom";
+import { ReactSession } from "react-client-session";
 function SubmitTopicDetails(){
     
     const navigate = useNavigate();
@@ -18,12 +19,20 @@ function SubmitTopicDetails(){
     const [fileId , setId] = useState("");
     const [doc , setDoc] = useState("");
     const location = useLocation();
-    const GroupId = "RSH_GRP-1";
+    var GroupId;
     console.log(location.state.name);
     var name = location.state.name;
     var template = name.replace("Submission" , "Template");
     var c;
 
+    useEffect(()=>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        GroupId = student.GroupId;
+    })
     console.log(template);
     function onFileChange(event) {
         setSelectedFile(event.target.files[0]);
@@ -31,7 +40,7 @@ function SubmitTopicDetails(){
 
     function downloadClick(){
         
-        axios.get(`http://localhost:8070/templates/getbyName/${template}`).then((res) =>{
+        axios.get(`https://rpms-backend.herokuapp.com/templates/getbyName/${template}`).then((res) =>{
             console.log(res);
             console.log(template);
             console.log(res.data[0].fileId);
@@ -39,7 +48,7 @@ function SubmitTopicDetails(){
             var downDoc = res.data[0].document
             console.log(downDoc);
 
-             fetch(`http://localhost:8070/templates/files/download/${fileid}`).then((res) => res.blob()).then((blob) =>{
+             fetch(`https://rpms-backend.herokuapp.com/templates/files/download/${fileid}`).then((res) => res.blob()).then((blob) =>{
                 const link = document.createElement("a");
                 link.href = URL.createObjectURL(blob);
                 link.setAttribute("download", downDoc);
@@ -50,7 +59,7 @@ function SubmitTopicDetails(){
                  console.log(err);
              })
 
-            //  axios.get(`http://localhost:8070/templates/files/download/${fileId}`).then((res) =>{
+            //  axios.get(`https://rpms-backend.herokuapp.com/templates/files/download/${fileId}`).then((res) =>{
             //      console.log(res);
             //      res.blob();
             //  }).then((blob) =>{
@@ -81,7 +90,7 @@ function SubmitTopicDetails(){
           //  selectedFile.name
         );
 
-        await axios.post(`http://localhost:8070/submissions/submitDoc` , formData).then((res) =>{
+        await axios.post(`https://rpms-backend.herokuapp.com/submissions/submitDoc` , formData).then((res) =>{
             console.log(res.data.document);
             c = res.data.document
             docfileId = res.data.fileId
@@ -99,10 +108,12 @@ function SubmitTopicDetails(){
             document : c ,
             docfileId
         };
-        axios.post(`http://localhost:8070/submissions/add/` , documentData).then((res) =>{
+        axios.post(`https://rpms-backend.herokuapp.com/submissions/add/` , documentData).then((res) =>{
             console.log(res);
-          //  console.log("Success !");
+          alert("Submission Completed!");
+
             console.log(documentData);
+            navigate('/student-home');
         }).then((res) =>{
             console.log("Success !");
         }).catch((err) =>{
@@ -123,7 +134,7 @@ function SubmitTopicDetails(){
                     <input className="form-control" type="file" id="formFile" onChange={(event)=>{
                         onFileChange(event);
                     }}/> <br />
-                    <Button variant="primary" style = {{marginLeft : "94%"}} onClick = {() =>{
+                    <Button variant="primary"  onClick = {() =>{
                         onSubmitClick();
                     }}>Submit</Button>
                 </div>

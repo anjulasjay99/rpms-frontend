@@ -4,12 +4,15 @@ import { Container ,  Button , Form , Card , CardImg , CardGroup} from 'react-bo
 import axios from 'axios'
 import { Button } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { FaUserTie } from "react-icons/fa";
-import { RecentActorsOutlined } from "@mui/icons-material";
 import { Dropdown , DropdownButton } from "react-bootstrap";
 import StudentHeader from "../../Shared/Header-student";
+import { useLocation } from "react-router-dom";
+import { ReactSession } from "react-client-session";
+import { useNavigate } from "react-router-dom";
+import "../css/multicard.css";
 function TopicTitle() {
-
+    const location = useLocation();
+    const navigate = useNavigate();
     const researchAreas = ["Machine Learning" , "Deep Learning" , "Parallel Computing" , "Artificial Intelligence" , "Robotics"];
     const [title , seTitle] = useState("");
     const [supervisors , setSupervisors] = useState([]);
@@ -17,10 +20,15 @@ function TopicTitle() {
     const [supervisorId , setId] = useState("");
     const [field , setField] = useState("Machine Learning");
     const [selection , setSelection] = useState("Research Field");
-    const grpId = "RSH_GRP-1";
-
+  //  const grpId = "RSH_GRP-1";
+    const grpId = location.state;
     useEffect(()=>{
-        axios.get(`http://localhost:8070/staff/getSupervisors`).then((res) =>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        axios.get(`https://rpms-backend.herokuapp.com/staff/getSupervisors`).then((res) =>{
             console.log(res.data);
             setSupervisors(res.data);
         }).catch((err) =>{
@@ -36,8 +44,10 @@ function TopicTitle() {
             topic : title,
             supervisorId
         }
-        axios.post(`http://localhost:8070/topicReg/add/${grpId}` , newTopicReg).then((res) =>{
+        axios.post(`https://rpms-backend.herokuapp.com/topicReg/add/${grpId}` , newTopicReg).then((res) =>{
             console.log(res);
+            alert("Submission Completed!");
+            navigate('/student-home');
         }).catch((err) =>{
             console.log(err);
         })
@@ -92,20 +102,21 @@ function TopicTitle() {
         <br />
         <hr />
         <Container>
-        <div className = 'SupervisorSection' style = {{marginTop : "3.5rem"}}>
+        
+        <div className = 'container' style = {{marginTop : "3.5rem"}}>
         {supervisors.map((supervisor) =>(
         <Card style={{ width: '18rem' , borderRadius:'1.5rem' }}>
         <Card.Img variant="top"  />
         <Card.Body>
-            <Card.Title>{supervisor.fullName}</Card.Title>
+            <Card.Title>{supervisor.firstName}  {supervisor.lastName}</Card.Title>
             <Card.Text>
                 <b>Research Area : </b> {supervisor.field}
                 <br/>
-                <b>Email : </b>{supervisor.Sliitemail}
+                <b>Email : </b>{supervisor.sliitEmail}
                 <br/>
                 {/* Enter other info */}
             </Card.Text>
-            {isSelected ?  <Button variant="contained" color="success" onClick = {() =>{
+            {isSelected && supervisorId == supervisor.staffId ?  <Button variant="contained" color="success" onClick = {() =>{
                 setSelected(false);
                 setId("");
             }}>

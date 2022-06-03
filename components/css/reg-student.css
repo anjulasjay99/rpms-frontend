@@ -1,0 +1,10 @@
+.image{
+
+    background-image: url('../Shared/images/student2.jpg')  ;
+    background-size: cover;             
+    background-position: center;
+    background-repeat: no-repeat;       
+    height: max-content;
+    background-attachment: fixed;   
+
+}

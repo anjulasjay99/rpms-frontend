@@ -5,7 +5,7 @@ import axios from "axios";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import StudentHeader from "../../Shared/Header-student";
-
+import { ReactSession } from "react-client-session";
 
 import { Row , Col } from "react-bootstrap";
 import Box from '@mui/material/Box';
@@ -21,7 +21,12 @@ function SubmissionTypes() {
   const [types , setTypes] = useState([]);
 
     useEffect(() =>{
-        axios.get("http://localhost:8070/submissiontypes/").then((res) =>{
+        ReactSession.setStoreType("memory");
+        student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        axios.get("https://rpms-backend.herokuapp.com/submissiontypes/").then((res) =>{
             console.log(res.data);
             setTypes(res.data);
         }).catch((err) =>{

@@ -4,6 +4,7 @@ import { Container , Form , Button , Row , Col} from 'react-bootstrap';
 import { Typography , Grid } from '@mui/material';
 import StudentHeader from "../../Shared/Header-student";
 import { ReactSession } from "react-client-session";
+import { useNavigate } from 'react-router-dom';
 
 function GroupReg(){
 
@@ -27,9 +28,17 @@ function GroupReg(){
     const [S4mail , setS4Mail ] = useState("");
     const [S4contact , setS4ContactNumber ] = useState("");
 
+    const navigate = useNavigate();
     useEffect(() =>{
         ReactSession.setStoreType("memory");
         student = ReactSession.get("loginData");
+        if(student == null){
+            navigate('/student-login');
+        }
+        if(student.isGrouped == true){
+            alert("Group Already Registered!");
+            navigate('/student-home');
+        }
         console.log(student);
         setLeaderIDNumber(student.IdNumber);
         setLeaderNIC(student.nic);
@@ -45,7 +54,7 @@ function GroupReg(){
             S3ID , S3NIC , S3mail , S3contact ,
             S4ID , S4NIC , S4mail , S4contact 
         }
-        axios.post("http://localhost:8070/groups/add" , newGroup).then((res) =>{
+        axios.post("https://rpms-backend.herokuapp.com/groups/add" , newGroup).then((res) =>{
             console.log(res);
             alert("Group Added!");
             //Add Toast
