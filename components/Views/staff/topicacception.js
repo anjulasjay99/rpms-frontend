@@ -102,7 +102,7 @@ const Topicacception = () => {
     <br/>  
     <h1 className="text-center font-weight-bold text-primary">Accept Topic Title</h1>
     <br/><br/><br/>
-    <div className='container'>
+    <div className='container-xl'>
     <div className='row'>
     <div className='col-12'>
     <table className="table table-bordered">

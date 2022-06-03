@@ -50,7 +50,7 @@ const Registration = () => {
    <div>
    <br/>  
    <h1 className="text-center font-weight-bold text-primary">Staff Registration</h1>
-   <div className="container">
+   <div className="container-xl">
    <div className='mt-5'>
    <div>
    <form onSubmit={Register} className="row g-4">
@@ -86,11 +86,13 @@ const Registration = () => {
       <label for="inputZip" className="form-label">password</label>
       <input  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" type="password" value={password} onChange={(e)=>{setpassword(e.target.value)}} className="form-control" id="inputZip" required/>
     </div>
-
     <div className="col-12">
-    <div class="d-grid gap-2">
-      <button type="submit" className="btn btn-primary ">Sign in</button>
-    </div>
+    <br/>
+    <center>
+    <button style={{width : "100%"}} type="submit" className="btn btn-primary  ">Sign in</button>
+    </center>
+    <br/><br/>
+    
     </div>
   </form></div>
    </div>
